@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>እኛን ያግኙ — የብሪጅ ትምህርት ኔትወርክ</title>
+<meta name="description" content="የብሪጅ ኤጁኬሽን ኔትወርክን በስልክ፣ በኢሜይል ወይም በማህበራዊ ሚዲያ ያግኙ።">
+<meta property="og:title" content="እኛን ያግኙ — የብሪጅ ትምህርት ኔትወርክ">
+<meta property="og:image" content="assets/hero-group.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+<link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=Noto+Serif+Ethiopic:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .lang-switch{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    padding:4px;
+    margin-left:18px;
+    background:#ffffff;
+    border:1px solid rgba(17,27,48,0.08);
+    border-radius:999px;
+    font-family:'Inter',sans-serif;
+    box-shadow:0 6px 20px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.10);
+  }
+  header#siteHeader.scrolled .lang-switch{
+    background:#ffffff;
+    border-color:rgba(17,27,48,0.10);
+    box-shadow:0 4px 14px rgba(17,27,48,0.14), 0 1px 4px rgba(17,27,48,0.08);
+  }
+  .lang-switch .lang-opt{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:40px;
+    padding:7px 14px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.02em;
+    text-decoration:none;
+    border-radius:999px;
+    color:var(--navy, #16233f);
+    opacity:.7;
+    transition:opacity .2s ease, background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+  }
+  .lang-switch .lang-opt:hover{
+    opacity:1;
+    transform:translateY(-1px);
+    background:rgba(22,35,63,0.08);
+  }
+  .lang-switch .lang-opt.is-active{
+    opacity:1;
+    color:#fff;
+    background:var(--navy, #16233f);
+    box-shadow:0 3px 10px rgba(22,35,63,0.45);
+  }
+  .lang-switch .lang-opt.is-active:hover{ background:var(--navy, #16233f); }
+  @media (max-width:860px){
+    .lang-switch{ margin-left:10px; }
+    .lang-switch .lang-opt{ padding:6px 11px; font-size:11.5px; min-width:34px; }
+  }
+  body{ font-family:'Noto Sans Ethiopic', var(--sans, 'Inter'), sans-serif; }
+  h1,h2,h3,h4,.brand span,.story-year{ font-family:'Noto Serif Ethiopic', var(--serif, 'Source Serif 4'), serif; }
+
+  /* --- header layout patch: center lang switch in nav --- */
+  header#siteHeader nav{ position:relative; }
+  .lang-switch{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    margin-left:0;
+  }
+  @media (max-width:860px){
+    .lang-switch{
+      position:static;
+      transform:none;
+      margin-left:auto;
+      order:2;
+    }
+  }
+
+  /* --- footer language switch --- */
+  .footer-lang-switch{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    padding:4px;
+    background:#ffffff;
+    border:1px solid rgba(17,27,48,0.08);
+    border-radius:999px;
+    font-family:'Inter',sans-serif;
+    box-shadow:0 4px 14px rgba(0,0,0,0.18);
+    width:fit-content;
+  }
+  .footer-lang-switch .lang-opt{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:40px;
+    padding:7px 14px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.02em;
+    text-decoration:none;
+    border-radius:999px;
+    color:var(--navy, #16233f);
+    opacity:.7;
+    transition:opacity .2s ease, background .2s ease, color .2s ease, transform .15s ease;
+  }
+  .footer-lang-switch .lang-opt:hover{
+    opacity:1;
+    transform:translateY(-1px);
+    background:rgba(22,35,63,0.08);
+  }
+  .footer-lang-switch .lang-opt.is-active{
+    opacity:1;
+    color:#fff;
+    background:var(--navy, #16233f);
+    box-shadow:0 3px 10px rgba(22,35,63,0.45);
+  }
+</style>
+</head>
+<body>
+
+<div id="bridge-progress"><div id="bridge-progress-fill"></div></div>
+
+<header id="siteHeader" class="scrolled">
+  <nav>
+    <a href="index.html#home" class="brand">
+      <img src="assets/logo.jpg" alt="Bridge Education Network logo" onerror="this.style.display='none'">
+      <div>
+        <span>Bridge</span>
+        <small>Education Network</small>
+      </div>
+    </a>
+    <div class="lang-switch" role="group" aria-label="ቋንቋ ይቀይሩ / Language switch">
+      <a href="contact.html" class="lang-opt">EN</a>
+      <a href="contact-am.html" class="lang-opt is-active">አማ</a>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" onclick="closeMenu()">መነሻ</a>
+      <a href="about-am.html" onclick="closeMenu()">ስለ</a>
+      <a href="programs.html" onclick="closeMenu()">ፕሮግራሞች</a>
+      <a href="gallery.html" onclick="closeMenu()">ጋለሪ</a>
+      <a href="team.html" onclick="closeMenu()">ቡድን</a>
+      <a href="contact-am.html" onclick="closeMenu()">እኛን ያግኙ</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="ምናሌ ክፈት">☰</button>
+  </nav>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- CONTACT HERO + SOCIAL ROW -->
+<section class="contact-hero">
+  <div class="float-shape s1"></div>
+  <div class="float-shape s2"></div>
+  <div class="float-shape s3"></div>
+
+  <div class="contact-hero-inner wrap reveal">
+    <div class="eyebrow">እኛን ያግኙ</div>
+    <h1>አንድ ነገር አብረን እንገንባ</h1>
+    <p>የበለጠ ለማወቅ፣ በፈቃደኝነት ለመሳተፍ፣ ለመመዝገብ ወይም አብሮ ለመስራት በማህበራዊ ሚዲያ ላይ ያግኙ።</p>
+  </div>
+
+  <div class="glass-social-wrap wrap">
+    <div class="eyebrow" style="justify-content:center;display:flex;margin-bottom:16px;">ይደውሉልን ወይም መልእክት ይላኩልን</div>
+    <div class="glass-social-row reveal-stagger">
+      <a href="tel:+251947319715" class="glass-tile" aria-label="ወደ 0947 319 715 ይደውሉ">
+        <div class="glass-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <span class="gt-label">0947 319 715</span>
+      </a>
+      <a href="tel:+251940115655" class="glass-tile" aria-label="ወደ 0940 115 655 ይደውሉ">
+        <div class="glass-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <span class="gt-label">0940 115 655</span>
+      </a>
+      <a href="tel:+251903283921" class="glass-tile" aria-label="ወደ 0903 283 921 ይደውሉ">
+        <div class="glass-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <span class="gt-label">0903 283 921</span>
+      </a>
+
+    </div>
+
+    <div class="eyebrow" style="justify-content:center;display:flex;margin:44px 0 16px;">በመስመር ላይ ይገናኙ</div>
+    <div class="glass-social-row reveal-stagger">
+      <a href="mailto:bridgeedunetwork@gmail.com" class="glass-tile" aria-label="ኢሜይል">
+        <div class="glass-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M3 6l9 7 9-7"/></svg></div>
+        <span class="gt-label">ኢሜይል</span>
+      </a>
+      <a href="https://t.me/bridgeeducationnetwork" target="_blank" rel="noopener" class="glass-tile" aria-label="ቴሌግራም">
+        <div class="glass-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></div>
+        <span class="gt-label">ቴሌግራም</span>
+      </a>
+      <a href="https://wa.me/251947319715" target="_blank" rel="noopener" class="glass-tile" aria-label="ዋትስአፕ">
+        <div class="glass-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+        <span class="gt-label">ዋትስአፕ</span>
+      </a>
+      <a href="https://www.instagram.com/bridge_education_network/" target="_blank" rel="noopener" class="glass-tile" aria-label="ኢንስታግራም">
+        <div class="glass-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
+        <span class="gt-label">ኢንስታግራም</span>
+      </a>
+      <a href="https://www.linkedin.com/in/bridge-education-network-707793424/" target="_blank" rel="noopener" class="glass-tile" aria-label="ሊንክድኢን">
+        <div class="glass-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="9" width="20" height="12" rx="2"/><path d="M16 3H8a2 2 0 00-2 2v4h12V5a2 2 0 00-2-2z"/></svg></div>
+        <span class="gt-label">ሊንክድኢን</span>
+      </a>
+      <a href="https://www.youtube.com/@BridgeEducationNetwork" target="_blank" rel="noopener" class="glass-tile" aria-label="ዩቲዩብ">
+        <div class="glass-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none"/></svg></div>
+        <span class="gt-label">ዩቲዩብ</span>
+      </a>
+      <a href="https://www.tiktok.com/@bridgeeducationnetwork" target="_blank" rel="noopener" class="glass-tile" aria-label="ቲክቶክ">
+        <div class="glass-tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18V5l8 6-8 6z"/></svg></div>
+        <span class="gt-label">ቲክቶክ</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.jpg" alt="የብሪጅ አርማ" onerror="this.style.display='none'">
+          <span>የብሪጅ ትምህርት ኔትወርክ</span>
+        </div>
+        <p>በጋራ፣ እድሎችን የሚፈጥሩ፣ ማህበረሰቦችን የሚያጠናክሩ እና ዘላቂ ለውጥን የሚያነቃቁ ድልድዮችን እየገነባን ነው።</p>
+      </div>
+      <div class="footer-col">
+        <h5>ዳስስ</h5>
+        <a href="index.html">መነሻ</a>
+        <a href="about-am.html">ስለ</a>
+        <a href="programs.html">ፕሮግራሞች</a>
+        <a href="gallery.html">ጋለሪ</a>
+        <a href="team.html">ቡድን</a>
+        <a href="contact-am.html">እውቂያ</a>
+      </div>
+      <div class="footer-col">
+        <h5>እኛን ያግኙ</h5>
+        <a href="tel:+251947319715">0947 319 715</a>
+        <a href="tel:+519940115655">0940 115 655</a>
+        <a href="tel:+251903283921">0903 283 921</a>
+        <a href="mailto:bridgeedunetwork@gmail.com">bridgeedunetwork@gmail.com</a>
+      </div>
+      <div class="footer-col">
+        <h5>ቋንቋ</h5>
+        <div class="footer-lang-switch" role="group" aria-label="ቋንቋ ይቀይሩ / Language switch">
+          <a href="contact.html" class="lang-opt">EN</a>
+          <a href="contact-am.html" class="lang-opt is-active">አማ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 የብሪጅ ትምህርት ኔትወርክ። መብቱ በህግ የተጠበቀ ነው።</span>
+      <div class="footer-social">
+        <a href="mailto:bridgeedunetwork@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M3 6l9 7 9-7"/></svg></a>
+        <a href="https://www.linkedin.com/in/bridge-education-network-707793424/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="9" width="20" height="12" rx="2"/><path d="M16 3H8a2 2 0 00-2 2v4h12V5a2 2 0 00-2-2z"/></svg></a>
+        <a href="https://www.instagram.com/bridge_education_network/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://wa.me/251947319715" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  const progressFill = document.getElementById('bridge-progress-fill');
+  window.addEventListener('scroll', () => {
+    if(!header) return;
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    const h = document.documentElement;
+    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    if(progressFill) progressFill.style.width = pct + '%';
+  });
+
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  const navOverlay = document.getElementById('navOverlay');
+  function closeMenu(){
+    if(navLinks) navLinks.classList.remove('open');
+    if(navOverlay) navOverlay.classList.remove('open');
+    if(menuBtn){
+      menuBtn.textContent = '☰';
+      menuBtn.setAttribute('aria-label', 'Open menu');
+    }
+  }
+  if(menuBtn && navLinks && navOverlay){
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navOverlay.classList.toggle('open', isOpen);
+      menuBtn.textContent = isOpen ? '✕' : '☰';
+      menuBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+    navOverlay.addEventListener('click', closeMenu);
+  }
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
+
+  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in-view'); } });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
