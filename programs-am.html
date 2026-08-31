@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ፕሮግራሞቻችን — የብሪጅ ትምህርት ኔትወርክ</title>
+<meta name="description" content="የብሪጅ ኤጁኬሽን ኔትወርክ ፕሮግራሞች ሙሉ መረጃ እና የምዝገባ ደረጃዎች፡ የምልክት ቋንቋ፣ የስነ ጥበብ ክፍል፣ አብነት እና የኦርቶዶክስ ነገረ ሃይማኖት።">
+<meta property="og:title" content="ፕሮግራሞቻችን — የብሪጅ ትምህርት ኔትወርክ">
+<meta property="og:description" content="ለእያንዳንዱ የብሪጅ ፕሮግራም ሙሉ የትምህርት ዝርዝር እና ምዝገባ እንዴት እንደሚሰራ ያስሱ።">
+<meta property="og:image" content="assets/hero-group.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+<link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=Noto+Serif+Ethiopic:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  header#siteHeader nav{ position:relative; }
+  .lang-switch{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    padding:4px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background:#ffffff;
+    border:1px solid rgba(17,27,48,0.08);
+    border-radius:999px;
+    font-family:'Inter',sans-serif;
+    box-shadow:0 6px 20px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.10);
+  }
+  header#siteHeader.scrolled .lang-switch{
+    background:#ffffff;
+    border-color:rgba(17,27,48,0.10);
+    box-shadow:0 4px 14px rgba(17,27,48,0.14), 0 1px 4px rgba(17,27,48,0.08);
+  }
+  .lang-switch .lang-opt{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:40px;
+    padding:7px 14px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.02em;
+    text-decoration:none;
+    border-radius:999px;
+    color:var(--navy, #16233f);
+    opacity:.7;
+    transition:opacity .2s ease, background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+  }
+  .lang-switch .lang-opt:hover{
+    opacity:1;
+    transform:translateY(-1px);
+    background:rgba(22,35,63,0.08);
+  }
+  .lang-switch .lang-opt.is-active{
+    opacity:1;
+    color:#fff;
+    background:var(--navy, #16233f);
+    box-shadow:0 3px 10px rgba(22,35,63,0.45);
+  }
+  .lang-switch .lang-opt.is-active:hover{ background:var(--navy, #16233f); }
+  @media (max-width:860px){
+    .lang-switch{ position:static; transform:none; margin-left:auto; order:2; }
+    .lang-switch .lang-opt{ padding:6px 11px; font-size:11.5px; min-width:34px; }
+  }
+  body{ font-family:'Noto Sans Ethiopic', var(--sans, 'Inter'), sans-serif; }
+  h1,h2,h3,h4,.brand span,.eyebrow,.fee-card-label{ font-family:'Noto Serif Ethiopic', var(--serif, 'Source Serif 4'), serif; }
+</style>
+</head>
+<body>
+
+<div id="bridge-progress"><div id="bridge-progress-fill"></div></div>
+
+<header id="siteHeader" class="scrolled">
+  <nav>
+    <a href="index.html#home" class="brand">
+      <img src="assets/logo.jpg" alt="Bridge Education Network logo" onerror="this.style.display='none'">
+      <div>
+        <span>Bridge</span>
+        <small>Education Network</small>
+      </div>
+    </a>
+    <div class="lang-switch" role="group" aria-label="ቋንቋ ይቀይሩ / Language switch">
+      <a href="programs.html" class="lang-opt">EN</a>
+      <a href="programs-am.html" class="lang-opt is-active">አማ</a>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" onclick="closeMenu()">መነሻ</a>
+      <a href="about-am.html" onclick="closeMenu()">ስለ</a>
+      <a href="programs-am.html" onclick="closeMenu()">ፕሮግራሞች</a>
+      <a href="gallery-am.html" onclick="closeMenu()">ጋለሪ</a>
+      <a href="team-am.html" onclick="closeMenu()">ቡድን</a>
+      <a href="contact-am.html" onclick="closeMenu()">እኛን ያግኙ</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="ምናሌ ክፈት">☰</button>
+  </nav>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="wrap">
+    <a href="index.html" class="page-breadcrumb">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      ወደ መነሻ ተመለስ
+    </a>
+    <div class="eyebrow">ፕሮግራሞቻችን</div>
+    <h1>ስለምናካሂደው እያንዳንዱ ፕሮግራም ሙሉ መረጃ</h1>
+    <p>በምልክት ቋንቋ፣ በሥነ ጥበብ፣ በኦርቶዶክስ አብነት እና በነገረ ሃይማኖት የተዘጋጁ ፕሮግራሞቻችንን ያስሱ እና ከመመዝገብዎ በፊት ምን እንደሚጠብቁ ይወቁ።</p>
+  </div>
+</section>
+
+<!-- HOW ENROLLMENT WORKS -->
+<section class="enroll-section section-parchment">
+  <div class="wrap">
+    <div class="head-lg reveal" style="margin-bottom:0;">
+      <div class="eyebrow dark">ምዝገባ እንዴት እንደሚሰራ</div>
+      <h2 style="font-size:clamp(26px,3vw,36px);">ለመጀመር ስድስት ቀላል ደረጃዎች</h2>
+    </div>
+    <div class="enroll-steps reveal-stagger">
+      <div class="enroll-step">
+        <div class="enroll-step-num">1</div>
+        <h4>ፕሮግራም ይምረጡ</h4>
+        <p>ለማጥናት የሚፈልጉትን ክፍል ወይም ፕሮግራም ይምረጡ።</p>
+      </div>
+      <div class="enroll-step">
+        <div class="enroll-step-num">2</div>
+        <h4>ኮርስዎን ወይም ደረጃዎን ይምረጡ</h4>
+        <p>ለመቀላቀል የሚፈልጉትን የተወሰነ ኮርስ፣ ደረጃ ወይም የመማሪያ ትራክ ይምረጡ።</p>
+      </div>
+      <div class="enroll-step">
+        <div class="enroll-step-num">3</div>
+        <h4>የመማሪያ ዘዴዎን ይምረጡ</h4>
+        <ul>
+          <li>የመስመር ላይ የቡድን ክፍሎች</li>
+          <li>የመስመር ላይ የግል (ቪአይፒ)</li>
+          <li>ከቤት ወደ ቤት የግል (ቪአይፒ)</li>
+        </ul>
+      </div>
+      <div class="enroll-step">
+        <div class="enroll-step-num">4</div>
+        <h4>የመመዝገቢያ ቅጹን ይሙሉ</h4>
+        <p>አሁን ይመዝገቡ የሚለውን ጠቅ ያድርጉ እና የጉግል ምዝገባ ቅጽን ይሙሉ።</p>
+      </div>
+      <div class="enroll-step">
+        <div class="enroll-step-num">5</div>
+        <h4>ክፍያ ያስገቡ</h4>
+        <p>የክፍያ ደረሰኝዎን (የባንክ ዝውውር ደረሰኝ ወይም የክፍያ ወረቀት) በቀጥታ በምዝገባ ቅጹ ውስጥ ያስገቡ።</p>
+      </div>
+      <div class="enroll-step">
+        <div class="enroll-step-num">6</div>
+        <h4>እኛ እናገኝዎታለን</h4>
+        <p>ቡድናችን ያስገቡትን ይገመግማል እና ምዝገባውን ለማጠናቀቅ በመረጡት ዘዴ እርስዎን ያነጋግርዎታል።</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MULTI-CLASS DISCOUNT -->
+<section class="enroll-section section-parchment" id="multi-class-discount">
+  <div class="wrap">
+    <div class="head-lg reveal" style="margin-bottom:0;">
+      <div class="eyebrow dark">ባለብዙ ክፍል ቅናሽ</div>
+      <h2 style="font-size:clamp(26px,3vw,36px);">በበርካታ ክፍሎች ሲመዘገቡ ተጨማሪ ይቆጥቡ</h2>
+    </div>
+    <p style="max-width:640px;margin:18px auto 28px;text-align:center;color:var(--gray);">ለብዙ ክፍሎች የሚመዘገቡ ተማሪዎች በተጣመረ ምዝገባቸው ላይ ቅናሽ ማግኘት ይችላሉ፦</p>
+    <div class="fee-grid reveal-stagger" style="max-width:760px;margin:0 auto;">
+      <div class="fee-card">
+        <div class="fee-card-label">2 ክፍሎች</div>
+        <div class="fee-card-amount">10%<span> ቅናሽ</span></div>
+      </div>
+      <div class="fee-card">
+        <div class="fee-card-label">3 ክፍሎች</div>
+        <div class="fee-card-amount">15%<span> ቅናሽ</span></div>
+      </div>
+      <div class="fee-card">
+        <div class="fee-card-label">4+ ክፍሎች</div>
+        <div class="fee-card-amount">20%<span> ቅናሽ</span></div>
+      </div>
+    </div>
+    <div class="fee-notice" style="max-width:760px;margin:20px auto 0;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <div>
+        <h6>እንዴት እንደሚሰራ</h6>
+        <p>ቅናሹ በተለያዩ ፕሮግራሞች ወይም በተመሳሳይ ፕሮግራም ውስጥ ላሉ በርካታ ክፍሎች ሊተገበር ይችላል። ለምሳሌ፣ አንድ ተማሪ የምልክት ቋንቋ + አብነት + ነገረ ሃይማኖት ማዋሃድ ወይም ለብዙ የነገረ ሃይማኖት ዘርፎች በመመዝገብ ቅናሽ ማግኘት ይችላል።</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM NAV CARDS -->
+<div class="program-nav-wrap">
+  <div class="program-nav-cards" id="pnavCards">
+    <a href="#sign-language" class="pnav-card" data-target="sign-language">
+      <div class="pnav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 11V6a2 2 0 00-2-2 2 2 0 00-2 2M14 10V4a2 2 0 00-2-2 2 2 0 00-2 2v2M10 10.5V6a2 2 0 00-2-2 2 2 0 00-2 2v8M6 14V9a2 2 0 00-2-2 2 2 0 00-2 2v6a8 8 0 008 8h2c3.3 0 6-2.7 6-6v-4a2 2 0 00-2-2 2 2 0 00-2 2"/></svg></div>
+      <div class="pnav-text"><h5>የምልክት ቋንቋ</h5><p>ጀማሪ → የላቀ</p></div>
+    </a>
+    <a href="#art-school" class="pnav-card" data-target="art-school">
+      <div class="pnav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="13.5" cy="6.5" r="0.5" fill="currentColor"/><circle cx="17.5" cy="10.5" r="0.5" fill="currentColor"/><circle cx="8.5" cy="7.5" r="0.5" fill="currentColor"/><circle cx="6.5" cy="12.5" r="0.5" fill="currentColor"/><path d="M12 2a10 10 0 000 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.4a3 3 0 003-3A9.99 9.99 0 0012 2z"/></svg></div>
+      <div class="pnav-text"><h5>የስነ ጥበብ ክፍል</h5><p>3 የመማሪያ ትራኮች</p></div>
+    </a>
+    <a href="#abenet" class="pnav-card" data-target="abenet">
+      <div class="pnav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M10 8h6M10 12h4"/></svg></div>
+      <div class="pnav-text"><h5>አብነት</h5><p>2 ክፍሎች</p></div>
+    </a>
+    <a href="#theology" class="pnav-card" data-target="theology">
+      <div class="pnav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5M3 17l9 5 9-5"/></svg></div>
+      <div class="pnav-text"><h5>ነገረ ሃይማኖት</h5><p>3 የጥናት ዘርፎች</p></div>
+    </a>
+  </div>
+</div>
+
+<!-- 1. SIGN LANGUAGE -->
+<section class="detail-section" id="sign-language">
+  <div class="wrap">
+    <div class="detail-head">
+      <div>
+        <div class="eyebrow dark program-number">ፕሮግራም 01</div>
+        <h2>የብሪጅ ምልክት ቋንቋ ክፍል</h2>
+      </div>
+      <div class="detail-status available">አሁን ይገኛል</div>
+    </div>
+
+    <div class="cohort-panel reveal">
+      <div class="cohort-panel-head">
+        <div>
+          <span class="cohort-status-pill">ምዝገባዎች ክፍት ናቸው — ቡድን 1</span>
+          <h3 style="margin-top:12px;font-size:19px;color:var(--navy);">የአሁኑ የቡድን መርሃ ግብር</h3>
+        </div>
+        <div class="countdown-row" data-countdown="2026-09-18T00:00:00+03:00">
+          <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">ቀናት</div></div>
+          <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">ሰዓት</div></div>
+          <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">ደቂቃዎች</div></div>
+          <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">ሰከንዶች</div></div>
+        </div>
+      </div>
+      <div class="cohort-alt">📅 <strong>ይህ የቡድን መርሃ ግብር ለመስመር ላይ የቡድን ክፍል ነው።</strong> ከታች የሚታዩት ቆጠራ እና መርሃ ግብር የሚሰሩት ለአሁኑ የመስመር ላይ የቡድን ክፍል ቡድን ብቻ ነው። የቪአይፒ ተማሪዎች በእነዚህ ሰዓቶች ብቻ የተገደቡ አይደሉም — የመስመር ላይ የግል (ቪአይፒ) እና ከቤት ወደ ቤት የግል (ቪአይፒ) ተማሪዎች እንደ አስተማሪዎች አቅርቦት ሁኔታ የመረጡትን ቀናት እና ሰዓት መጠየቅ ይችላሉ።</div>
+      <div class="schedule-grid">
+        <div class="schedule-card">
+          <h5>ጀማሪ — ቡድን 1</h5>
+          <div class="sched-days">አርብ እና ቅዳሜ</div>
+          <div class="sched-time">ከምሽቱ 11:45 – 12:45 ሰዓት</div>
+          <div class="sched-start">ከመስከረም 8፣ 2018 ጀምሮ</div>
+        </div>
+      </div>
+      <div class="fee-notice" style="margin-top:20px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+        <div>
+          <h6>የቪአይፒ ተማሪዎች በማንኛውም ጊዜ ይጀምራሉ</h6>
+          <p>የመስመር ላይ የግል (ቪአይፒ) እና ከቤት ወደ ቤት የግል (ቪአይፒ) ተማሪዎች የቡድን ቡድን ሳይጠብቁ በማንኛውም ጊዜ መጀመር ይችላሉ፣ እና በራሳቸው ፍጥነት መሻሻል ይችላሉ።</p>
+        </div>
+      </div>
+      <div class="cohort-alt">📅 <strong>ተስማሚ የጊዜ ሰሌዳ አያዩም?</strong> አማራጭ የጊዜ ሰሌዳዎችን፣ የግል ትምህርቶችን ወይም የወደፊት የቡድን ቡድኖችን ለመወያየት እባክዎ <a href="contact-am.html" style="color:var(--navy);font-weight:700;text-decoration:underline;">እኛን ያግኙ</a>።</div>
+    </div>
+
+    <div class="fee-panel reveal">
+      <div class="fee-panel-head">
+        <span class="fee-panel-eyebrow">የፕሮግራም ክፍያዎች</span>
+        <h3>የትምህርት እና የማመልከቻ ክፍያዎች</h3>
+      </div>
+      <div class="fee-grid">
+        <div class="fee-card fee-card-app">
+          <div class="fee-card-label">የማመልከቻ ክፍያ</div>
+          <div class="fee-card-amount">ETB 90</div>
+          <div class="fee-card-note">ለሁሉም አመልካቾች ያስፈልጋል።</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-card-label">የመስመር ላይ የቡድን ክፍል</div>
+          <div class="fee-card-amount">ETB 249<span>/ ሰዓት</span></div>
+          <div class="fee-card-note">ተማሪዎች ለሚመዘገቡበት ሙሉ ኮርስ/ደረጃ ይከፍላሉ። የኮርሱ ርዝመት፡ ጀማሪ 12 ሰዓት · መካከለኛ 13 ሰዓት · ከፍተኛ 15 ሰዓት።</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-card-label">የመስመር ላይ የግል (ቪአይፒ)</div>
+          <div class="fee-card-amount">ETB 449<span>/ ሰዓት</span></div>
+          <div class="fee-card-note">ተለዋዋጭ የጊዜ ሰሌዳ · የአንድ ለአንድ መመሪያ።</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-card-label">ከቤት ወደ ቤት የግል (ቪአይፒ)</div>
+          <div class="fee-card-amount">ከ ETB 499<span>/ ሰዓት</span></div>
+          <div class="fee-card-note">ተለዋዋጭ የጊዜ ሰሌዳ · የአንድ ለአንድ መመሪያ · የትራንስፖርት ክፍያዎች እንደ ቦታው ሊጨመሩ ይችላሉ።</div>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>ከቤት ወደ ቤት የግል</h6>
+          <p>ከቤት ወደ ቤት ለመማር፣ እባክዎን በቀጥታ ያግኙን። ቡድናችን ከማመልከትዎ በፊት ስለ ቦታዎ፣ የጊዜ ሰሌዳዎ፣ የአስተማሪዎች አቅርቦት እና የትምህርት ክፍያዎ ይወያያል።</p>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>የክፍያ ውሎች</h6>
+          <p>ተማሪዎች ምዝገባው ከመጠናቀቁ በፊት ሙሉውን ኮርስ አስቀድመው ይከፍላሉ።</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-columns" style="margin-top:40px;">
+      <div>
+        <div class="level-stack">
+          <div class="level-card">
+            <h4>ጀማሪ <span style="font-family:var(--sans);font-size:12px;font-weight:600;color:var(--gray);text-transform:none;letter-spacing:0;">— 12 ሰዓታት</span></h4>
+            <ul>
+              <li>ከመሠረቱ ጀምሮ የኢትዮጵያን የምልክት ቋንቋ ይማሩ</li>
+              <li>ጠንካራ የቃላት ዝርዝር ይገንቡ እና የመስማት ችግር ያለባቸውን ግንኙነቶች መሰረታዊ ነገሮች ይረዱ</li>
+              <li>የዕለት ተዕለት ውይይቶችን እና መሰረታዊ አገላለጾችን ይለማመዱ</li>
+            </ul>
+          </div>
+          <div class="level-card">
+            <h4>መካከለኛ <span style="font-family:var(--sans);font-size:12px;font-weight:600;color:var(--gray);text-transform:none;letter-spacing:0;">— 13 ሰዓታት</span></h4>
+            <ul>
+              <li>የንግግር ቅልጥፍናን ማሻሻል</li>
+              <li>የሰዋሰው፣ የፊት መግለጫዎች እና ተግባራዊ የመግባቢያ ክህሎቶችን ይማሩ</li>
+              <li>በእውነተኛ ህይወት ሁኔታዎች ልምምድ አማካኝነት በራስ መተማመንን ይገንቡ</li>
+            </ul>
+          </div>
+          <div class="level-card">
+            <h4>ከፍተኛ <span style="font-family:var(--sans);font-size:12px;font-weight:600;color:var(--gray);text-transform:none;letter-spacing:0;">— 15 ሰዓታት</span></h4>
+            <ul>
+              <li>አቀላጥፎ የመግባቢያ ችሎታን ማስተር ያደርጋሉ</li>
+              <li>የህዝብ ግንኙነት እና የትርጉም ክህሎቶችን ማዳበር</li>
+              <li>የሙያ ሥነ ምግባርን፣ የአመራር እና የሙያ እድሎችን በምልክት ቋንቋ ይማሩ</li>
+            </ul>
+          </div>
+        </div>
+        <div class="detail-about" style="margin-top:32px;">
+          <h4 style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;">ስለ ፕሮግራሙ</h4>
+          <p>ከጀማሪ እስከ ከፍተኛ ደረጃ ድረስ ሙያዊ የኢትዮጵያ ምልክት ቋንቋ ስልጠና፣ በመስማት ችግር ያለባቸው እና በሚሰሙ ማህበረሰቦች መካከል ግንኙነትን ለማገናኘት የሚረዳ። በ<strong>"ዓይኖች ይሰማሉ"</strong> አርአያችን የምንመራ ስንሆን፣ ግንኙነት እንቅፋቶችን የማስወገድ፣ ማህበረሰቦችን የማጠናከር እና ለሁሉም እኩል እድል የመፍጠር ኃይል እንዳለው እናምናለን።</p>
+        </div>
+      </div>
+      <div>
+        <div class="detail-side-block">
+          <h4>ይህ ፕሮግራም ለማን ነው?</h4>
+          <ul><li>ሁሉም ሰው</li></ul>
+        </div>
+        <div class="detail-side-block">
+          <h4>የመማሪያ ዘዴዎች</h4>
+          <ul>
+            <li>የመስመር ላይ የቡድን ክፍሎች</li>
+            <li>የመስመር ላይ የግል (ቪአይፒ)</li>
+            <li>ከቤት ወደ ቤት የግል (ቪአይፒ)</li>
+            <li>ትምህርት ቤቶች እና ድርጅቶች</li>
+          </ul>
+          <div class="methods-note">ከቤተሰብ ወይም ከጓደኞች ጋር መማር ይፈልጋሉ? የግል ትምህርት ይጠይቁ እና ለእርስዎ በሚስማማ መርሃ ግብር በቡድን ሆነው አብረው ይማሩ።</div>
+        </div>
+        <div class="detail-cta-row">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBMdZhzI4ta-ZP2H80Q1u85T6SxXSP2tIdPjwNam-0gN0Urw/viewform?usp=header" target="_blank" rel="noopener" class="program-enroll">አሁኑኑ ይመዝገቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="team-am.html#sign-language" class="team-btn outline">ከአስተማሪዎቻችን ጋር ይተዋወቁ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. ABENET -->
+<section class="detail-section" id="abenet">
+  <div class="wrap">
+    <div class="detail-head">
+      <div>
+        <div class="eyebrow dark program-number">ፕሮግራም 02</div>
+        <h2>የብሪጅ አብነት ክፍል</h2>
+      </div>
+      <div class="detail-status available">አሁን ይገኛል</div>
+    </div>
+
+    <div class="cohort-panel reveal">
+      <div class="cohort-panel-head">
+        <div>
+          <span class="cohort-status-pill">ምዝገባዎች ክፍት ናቸው</span>
+          <h3 style="margin-top:12px;font-size:19px;color:var(--navy);">የአሁኑ የቡድን መርሃ ግብር</h3>
+        </div>
+        <div class="countdown-row" data-countdown="2026-09-15T00:00:00+03:00">
+          <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">ቀናት</div></div>
+          <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">ሰዓት</div></div>
+          <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">ደቂቃዎች</div></div>
+          <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">ሰከንዶች</div></div>
+        </div>
+      </div>
+      <div class="schedule-grid">
+        <div class="schedule-card">
+          <h5>አብነት — የቡድን ክፍል</h5>
+          <div class="sched-days">ቅዳሜ እና እሁድ</div>
+          <div class="sched-time">ማታ 12:00 – 1:00 ሰዓት</div>
+          <div class="sched-start">ከመስከረም 5፣ 2018 ጀምሮ</div>
+        </div>
+      </div>
+      <div class="cohort-alt">📅 <strong>ተስማሚ የጊዜ ሰሌዳ አያዩም?</strong> አማራጭ የጊዜ ሰሌዳዎችን፣ የግል ትምህርቶችን ወይም የወደፊት የቡድን ቡድኖችን ለመወያየት እባክዎ <a href="contact-am.html" style="color:var(--navy);font-weight:700;text-decoration:underline;">እኛን ያግኙ</a>።</div>
+    </div>
+
+    <div class="fee-panel reveal">
+      <div class="fee-panel-head">
+        <span class="fee-panel-eyebrow">የፕሮግራም ክፍያዎች</span>
+        <h3>የትምህርት እና የማመልከቻ ክፍያዎች</h3>
+      </div>
+      <div class="fee-grid">
+        <div class="fee-card fee-card-app">
+          <div class="fee-card-label">የማመልከቻ ክፍያ</div>
+          <div class="fee-card-amount">ETB 90</div>
+          <div class="fee-card-note">ለሁሉም አመልካቾች ያስፈልጋል።</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-card-label">የመስመር ላይ የቡድን ክፍል</div>
+          <div class="fee-card-amount">ETB 199<span>/ ሰዓት</span></div>
+          <div class="fee-card-note">ተማሪዎች ለሚመዘገቡበት ሙሉ ኮርስ/ደረጃ ይከፍላሉ።</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-card-label">የመስመር ላይ የግል (ቪአይፒ)</div>
+          <div class="fee-card-amount">ETB 449<span>/ ሰዓት</span></div>
+          <div class="fee-card-note">የአንድ ለአንድ መመሪያ።</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-card-label">ከቤት ወደ ቤት የግል (ቪአይፒ)</div>
+          <div class="fee-card-amount">ከ ETB 499<span>/ ሰዓት</span></div>
+          <div class="fee-card-note">የትራንስፖርት ክፍያዎች እንደ ቦታው ሊጨመሩ ይችላሉ።</div>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>የክፍያ ውሎች</h6>
+          <p>ተማሪዎች ምዝገባው ከመጠናቀቁ በፊት ቢያንስ ለ8 ሰዓታት (አንድ ወር) አስቀድመው ይከፍላሉ።</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-columns" style="margin-top:40px;">
+      <div>
+        <div class="level-stack">
+          <div class="level-card">
+            <h4>የንባብ ክፍል</h4>
+            <p style="font-size:13.5px;color:var(--gray);margin-top:6px;">ተማሪዎች የኢትዮጵያ ኦርቶዶክስ ተዋህዶ ቤተክርስቲያን ቅዱሳት መጻሕፍትን በራስ መተማመን እና በትክክል ማንበብ እንዲችሉ ይረዳል።</p>
+            <ul style="margin-top:12px;">
+              <li>ውዳሴ ማርያም</li>
+              <li>መዝሙረ ዳዊት</li>
+              <li>የብሉይ ኪዳን ንባብ</li>
+              <li>የሐዲስ ኪዳን ንባብ</li>
+              <li>የተአምራት መጻሕፍት</li>
+              <li>ሌሎች የአምልኮ ጽሑፎች</li>
+            </ul>
+          </div>
+          <div class="level-card">
+            <h4>የዜማ ክፍል</h4>
+            <p style="font-size:13.5px;color:var(--gray);margin-top:6px;">ተማሪዎችን ከኢትዮጵያ ኦርቶዶክስ ተዋህዶ ቤተክርስቲያን የአምልኮ ዜማ ትውፊት ጋር ያስተዋውቃል።</p>
+            <ul style="margin-top:12px;">
+              <li>ውዳሴ ማርያም ዜማዎች</li>
+              <li>የአምልኮ ዜማዎች</li>
+              <li>ሰዓታት</li>
+            </ul>
+          </div>
+        </div>
+        <div class="detail-about" style="margin-top:32px;">
+          <h4 style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;">ስለ ፕሮግራሙ</h4>
+          <p>ባህላዊ የኢትዮጵያ ኦርቶዶክስ ንባብ እና የአምልኮ ትምህርት በሁለት ክፍሎች፣ ንባብ እና ዜማ። ትምህርታችን የቤተክርስቲያኗን ትክክለኛ ትምህርቶች፣ ዲሲፕሊን እና የአምልኮ ሥርዓቶችን የሚከተል ሲሆን ትምህርትን ለተለያዩ ዕድሜ ላሉ ተማሪዎች ተደራሽ እናደርጋለን።</p>
+        </div>
+      </div>
+      <div>
+        <div class="detail-side-block">
+          <h4>ይህ ፕሮግራም ለማን ነው?</h4>
+          <ul>
+            <li>ልጆች</li>
+            <li>ወጣቶች</li>
+            <li>ጎልማሶች</li>
+            <li>ቤተሰቦች</li>
+            <li>ማንኛውም ፍላጎት ያለው ሰው</li>
+          </ul>
+        </div>
+        <div class="detail-side-block">
+          <h4>የመማሪያ ዘዴዎች</h4>
+          <ul>
+            <li>የመስመር ላይ የቡድን ክፍሎች</li>
+            <li>የመስመር ላይ የግል (ቪአይፒ)</li>
+            <li>ከቤት ወደ ቤት የግል (ቪአይፒ)</li>
+          </ul>
+          <div class="methods-note">ከቤተሰብ ወይም ከጓደኞች ጋር መማር ይፈልጋሉ? የግል ትምህርት ይጠይቁ እና ለእርስዎ በሚስማማ መርሃ ግብር በቡድን ሆነው አብረው ይማሩ።</div>
+        </div>
+        <div class="detail-cta-row">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRFP4_DPlgIYdW7Im9rH8StcokRG9dnCrF0ShHrsq0tqv5aA/viewform?usp=header" target="_blank" rel="noopener" class="program-enroll">አሁኑኑ ይመዝገቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="team-am.html#abenet" class="team-btn outline">ከአስተማሪዎቻችን ጋር ይተዋወቁ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ART SCHOOL -->
+<section class="detail-section" id="art-school">
+  <div class="wrap">
+    <div class="detail-head">
+      <div>
+        <div class="eyebrow dark program-number">ፕሮግራም 03</div>
+        <h2>የብሪጅ አርት ትምህርት ቤት</h2>
+      </div>
+      <div class="detail-status available">አሁን ይገኛል</div>
+    </div>
+
+    <div class="cohort-panel reveal">
+      <div class="cohort-panel-head">
+        <div>
+          <span class="cohort-status-pill">ምዝገባዎች ክፍት ናቸው</span>
+          <h3 style="margin-top:12px;font-size:19px;color:var(--navy);">የአሁኑ የቡድን መርሃ ግብር</h3>
+        </div>
+        <div class="countdown-row" data-countdown="2026-09-19T00:00:00+03:00">
+          <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">ቀናት</div></div>
+          <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">ሰዓት</div></div>
+          <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">ደቂቃዎች</div></div>
+          <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">ሰከንዶች</div></div>
+        </div>
+      </div>
+      <div class="schedule-grid">
+        <div class="schedule-card">
+          <h5>የእርሳስ ስዕል → ሥዕል</h5>
+          <div class="sched-days">ቅዳሜ</div>
+          <div class="sched-time">ከቀኑ 10:00 – 11:00 ሰዓት</div>
+          <div class="sched-start">ከመስከረም 9፣ 2018 ጀምሮ</div>
+        </div>
+        <div class="schedule-card">
+          <h5>የኦርቶዶክስ ቅዱሳት ስዕላት</h5>
+          <div class="sched-days">እሁድ</div>
+          <div class="sched-time">ከቀኑ 10:00 – 11:00 ሰዓት</div>
+          <div class="sched-start">ከመስከረም 10፣ 2018 ጀምሮ</div>
+        </div>
+      </div>
+      <div class="cohort-alt">📅 <strong>ተስማሚ የጊዜ ሰሌዳ አያዩም?</strong> አማራጭ የጊዜ ሰሌዳዎችን፣ የግል ትምህርቶችን ወይም የወደፊት የቡድን ቡድኖችን ለመወያየት እባክዎ <a href="contact-am.html" style="color:var(--navy);font-weight:700;text-decoration:underline;">እኛን ያግኙ</a>።</div>
+    </div>
+
+    <div class="fee-panel reveal">
+      <div class="fee-panel-head">
+        <span class="fee-panel-eyebrow">የፕሮግራም ክፍያዎች</span>
+        <h3>የትምህርት እና የማመልከቻ ክፍያዎች</h3>
+      </div>
+      <div class="fee-grid">
+        <div class="fee-card fee-card-app">
+          <div class="fee-card-label">የማመልከቻ ክፍያ</div>
+          <div class="fee-card-amount">ETB 150</div>
+          <div class="fee-card-note">ለሁሉም አመልካቾች ያስፈልጋል።</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-card-label">የመስመር ላይ የቡድን ክፍል</div>
+          <div class="fee-card-amount">ETB 275<span>/ ሰዓት</span></div>
+          <div class="fee-card-note">ተማሪዎች ለሚመዘገቡበት ሙሉ ኮርስ/ደረጃ ይከፍላሉ።</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-card-label">የመስመር ላይ የግል (ቪአይፒ)</div>
+          <div class="fee-card-amount">ETB 475<span>/ ሰዓት</span></div>
+          <div class="fee-card-note">የአንድ ለአንድ መመሪያ።</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-card-label">ከቤት ወደ ቤት የግል (ቪአይፒ)</div>
+          <div class="fee-card-amount">ከ ETB 550<span>/ ሰዓት</span></div>
+          <div class="fee-card-note">የትራንስፖርት ክፍያዎች እንደ ቦታው ሊጨመሩ ይችላሉ።</div>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>ከቤት ወደ ቤት የግል</h6>
+          <p>ከቤት ወደ ቤት ለመማር፣ እባክዎን በቀጥታ ያግኙን። ቡድናችን ከማመልከትዎ በፊት ስለ ቦታዎ፣ የጊዜ ሰሌዳዎ፣ የአስተማሪዎች አቅርቦት እና የትምህርት ክፍያዎ ይወያያል።</p>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>የክፍያ ውሎች</h6>
+          <p>ክፍያው በሁለት ክፍሎች ይከፈላል፡ ግማሹ ክፍያ የሚከፈለው በምዝገባ ወቅት ሲሆን የቀረው ግማሽ ደግሞ ከዚያ በኋላ ይከፈላል።</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-columns" style="margin-top:40px;">
+      <div>
+        <div class="level-stack">
+          <div class="level-card">
+            <h4>የእርሳስ ስዕል</h4>
+            <ul>
+              <li>የስዕል፣ የምልከታ እና የኪነጥበብ ቴክኒኮችን መሰረታዊ ነገሮች ይማሩ</li>
+              <li>አስፈላጊ የሆኑ የኪነጥበብ ክህሎቶችን እየተለማመዱ የፈጠራ ችሎታን ማዳበር</li>
+            </ul>
+          </div>
+          <div class="level-card">
+            <h4>የውሃ ቀለም፣ ዘይት እና አክሪሊክ ቀለም</h4>
+            <ul>
+              <li>የውሃ ቀለም፣ የአክሬሊክ እና የዘይት ቀለምን ያስሱ</li>
+              <li>ቅንብርን፣ የቀለም ቲዎሪ እና የኪነጥበብ አገላለጽን ያሻሽሉ</li>
+            </ul>
+          </div>
+          <div class="level-card">
+            <h4>የኦርቶዶክስ ቅዱሳት ስዕላት</h4>
+            <ul>
+              <li>የኢትዮጵያ ኦርቶዶክስ ቅዱሳት ስዕላት እና ባህላዊ የጥበብ ቴክኒኮችን አጥኑ</li>
+              <li>በልምድ በተሞላ መሪነት ትርጉም ያለው የሃይማኖትና የባህል ጥበብ ስራ ይፍጠሩ</li>
+            </ul>
+          </div>
+        </div>
+        <div class="fee-notice" style="margin-top:20px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <div>
+            <h6>የኦርቶዶክስ ቅዱሳት ስዕላት ማስታወቂያ</h6>
+            <p>የኢትዮጵያ ኦርቶዶክስ ቅዱሳት ስዕላት ኮርሶች የሚገኙት ለኢትዮጵያ ኦርቶዶክስ ተዋህዶ ቤተክርስቲያን አባላት ብቻ ነው።</p>
+          </div>
+        </div>
+        <div class="detail-about" style="margin-top:32px;">
+          <h4 style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;">ስለ ፕሮግራሙ</h4>
+          <p>ሶስት የመማሪያ ትራኮች — የእርሳስ ስዕል፣ የውሃ ቀለም/ዘይት/አክሪሊክ ሥዕል እና የኦርቶዶክስ ቅዱሳት ስዕላት — የፈጠራ ችሎታን ለማሳደግ የተነደፉ ሲሆን የኢትዮጵያን የበለጸገ የኪነጥበብ እና መንፈሳዊ ቅርስ ይጠብቃሉ። ተማሪዎች በጥበብ እና በባህላዊ አዶግራፊ የብዙ ዓመታት ተግባራዊ ልምድ ካላቸው ልምድ ካላቸው አርቲስቶች እና አስተማሪዎች ይማራሉ።</p>
+        </div>
+      </div>
+      <div>
+        <div class="detail-side-block">
+          <h4>ይህ ፕሮግራም ለማን ነው?</h4>
+          <ul><li>ሁሉም ሰው</li></ul>
+        </div>
+        <div class="detail-side-block">
+          <h4>የመማሪያ ዘዴዎች</h4>
+          <ul>
+            <li>የመስመር ላይ የቡድን ክፍሎች</li>
+            <li>የመስመር ላይ የግል (ቪአይፒ)</li>
+            <li>ከቤት ወደ ቤት የግል (ቪአይፒ)</li>
+          </ul>
+          <div class="methods-note">ከቤተሰብ ወይም ከጓደኞች ጋር መማር ይፈልጋሉ? የግል ትምህርት ይጠይቁ እና ለእርስዎ በሚስማማ መርሃ ግብር በቡድን ሆነው አብረው ይማሩ።</div>
+        </div>
+        <div class="detail-cta-row">
+          <a href="contact-am.html" class="program-enroll">አሁኑኑ ይመዝገቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. THEOLOGY -->
+<section class="detail-section" id="theology">
+  <div class="wrap">
+    <div class="detail-head">
+      <div>
+        <div class="eyebrow dark program-number">ፕሮግራም 04</div>
+        <h2>የብሪጅ ኦርቶዶክስ ነገረ ሃይማኖት ክፍል</h2>
+      </div>
+      <div class="detail-status available">አሁን ይገኛል</div>
+    </div>
+
+    <div class="cohort-panel reveal">
+      <div class="cohort-panel-head">
+        <div>
+          <span class="cohort-status-pill">ምዝገባዎች ክፍት ናቸው</span>
+          <h3 style="margin-top:12px;font-size:19px;color:var(--navy);">የአሁኑ የቡድን መርሃ ግብር</h3>
+        </div>
+        <div class="countdown-row" data-countdown="2026-09-14T00:00:00+03:00">
+          <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">ቀናት</div></div>
+          <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">ሰዓት</div></div>
+          <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">ደቂቃዎች</div></div>
+          <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">ሰከንዶች</div></div>
+        </div>
+      </div>
+      <div class="schedule-grid">
+        <div class="schedule-card">
+          <h5>የቤተክርስቲያን ዶግማ</h5>
+          <div class="sched-days">ሰኞ</div>
+          <div class="sched-time">ማታ 1:30 – 2:30 ሰዓት</div>
+          <div class="sched-start">ከመስከረም 4፣ 2018 ጀምሮ</div>
+        </div>
+        <div class="schedule-card">
+          <h5>የቤተክርስቲያን ታሪክ</h5>
+          <div class="sched-days">ማክሰኞ</div>
+          <div class="sched-time">ማታ 1:30 – 2:30 ሰዓት</div>
+          <div class="sched-start">ከመስከረም 5፣ 2018 ጀምሮ</div>
+        </div>
+        <div class="schedule-card">
+          <h5>የመጽሐፍ ቅዱስ ጥናት</h5>
+          <div class="sched-days">ረቡዕ</div>
+          <div class="sched-time">ማታ 1:30 – 2:30 ሰዓት</div>
+          <div class="sched-start">ከመስከረም 6፣ 2018 ጀምሮ</div>
+        </div>
+      </div>
+      <div class="cohort-alt">📅 <strong>ተስማሚ የጊዜ ሰሌዳ አያዩም?</strong> አማራጭ የጊዜ ሰሌዳዎችን፣ የግል ትምህርቶችን ወይም የወደፊት የቡድን ቡድኖችን ለመወያየት እባክዎ <a href="contact-am.html" style="color:var(--navy);font-weight:700;text-decoration:underline;">እኛን ያግኙ</a>።</div>
+    </div>
+
+    <div class="fee-panel reveal">
+      <div class="fee-panel-head">
+        <span class="fee-panel-eyebrow">የፕሮግራም ክፍያዎች</span>
+        <h3>የትምህርት እና የማመልከቻ ክፍያዎች</h3>
+      </div>
+      <div class="fee-grid">
+        <div class="fee-card fee-card-app">
+          <div class="fee-card-label">የማመልከቻ ክፍያ</div>
+          <div class="fee-card-amount">ETB 80</div>
+          <div class="fee-card-note">ለሁሉም አመልካቾች ያስፈልጋል።</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-card-label">የመስመር ላይ የቡድን ክፍል</div>
+          <div class="fee-card-amount">ETB 199<span>/ ሰዓት</span></div>
+          <div class="fee-card-note">ተማሪዎች ለሚመዘገቡበት ሙሉ ኮርስ/ደረጃ ይከፍላሉ።</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-card-label">የመስመር ላይ የግል (ቪአይፒ)</div>
+          <div class="fee-card-amount">ETB 399<span>/ ሰዓት</span></div>
+          <div class="fee-card-note">የአንድ ለአንድ መመሪያ።</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-card-label">ከቤት ወደ ቤት የግል (ቪአይፒ)</div>
+          <div class="fee-card-amount">ከ ETB 499<span>/ ሰዓት</span></div>
+          <div class="fee-card-note">የትራንስፖርት ክፍያዎች እንደ ቦታው ሊጨመሩ ይችላሉ።</div>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>ከቤት ወደ ቤት የግል</h6>
+          <p>ከቤት ወደ ቤት ለመማር፣ እባክዎን በቀጥታ ያግኙን። ቡድናችን ከማመልከትዎ በፊት ስለ ቦታዎ፣ የጊዜ ሰሌዳዎ፣ የአስተማሪዎች አቅርቦት እና የትምህርት ክፍያዎ ይወያያል።</p>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>የክፍያ ውሎች</h6>
+          <p>ክፍያው በሁለት ክፍሎች ይከፈላል፡ ግማሹ ክፍያ የሚከፈለው በምዝገባ ወቅት ሲሆን የቀረው ግማሽ ደግሞ ከዚያ በኋላ ይከፈላል።</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-columns" style="margin-top:40px;">
+      <div>
+        <div class="level-stack">
+          <div class="level-card">
+            <h4>የመጽሐፍ ቅዱስ ጥናት <span style="font-family:var(--sans);font-size:12px;font-weight:600;color:var(--gray);text-transform:none;letter-spacing:0;">— 10 ሰዓታት · መካከለኛ ደረጃ</span></h4>
+            <ul>
+              <li>የብሉይ ኪዳን</li>
+              <li>የሐዲስ ኪዳን</li>
+              <li>የመጽሐፍ ቅዱስ ትርጓሜ እና አተገባበር</li>
+            </ul>
+          </div>
+          <div class="level-card">
+            <h4>የቤተክርስቲያን ዶግማ <span style="font-family:var(--sans);font-size:12px;font-weight:600;color:var(--gray);text-transform:none;letter-spacing:0;">— 10 ሰዓታት · መካከለኛ ደረጃ</span></h4>
+            <ul>
+              <li>የቤተክርስቲያኑ አምስቱ አእማድ</li>
+              <li>የኦርቶዶክስ ዋና ዋና ትምህርቶች</li>
+            </ul>
+          </div>
+          <div class="level-card">
+            <h4>የቤተክርስቲያን ታሪክ <span style="font-family:var(--sans);font-size:12px;font-weight:600;color:var(--gray);text-transform:none;letter-spacing:0;">— 15 ሰዓታት · መካከለኛ ደረጃ</span></h4>
+            <ul>
+              <li>የቤተክርስቲያን የመጀመሪያ ታሪክ</li>
+              <li>የኢትዮጵያ ኦርቶዶክስ ቤተክርስቲያን ታሪክ</li>
+              <li>የዓለም አቀፍ ቤተክርስቲያን ታሪክ</li>
+            </ul>
+          </div>
+        </div>
+        <div class="detail-about" style="margin-top:32px;">
+          <h4 style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;">ስለ ፕሮግራሙ</h4>
+          <p>ሦስት የጥናት ዘርፎች — የመጽሐፍ ቅዱስ ጥናት፣ የቤተክርስቲያን ዶግማ እና የቤተክርስቲያን ታሪክ — በልምድ ባላቸው አስተማሪዎች የሚሰጡ፣ የእምነት ግንዛቤያቸውን ለማሳደግ ለሚፈልጉ ግለሰቦች ሁሉን አቀፍ የኦርቶዶክስ ሥነ-መለኮታዊ ትምህርት ይሰጣል።</p>
+        </div>
+      </div>
+      <div>
+        <div class="detail-side-block">
+          <h4>ይህ ፕሮግራም ለማን ነው?</h4>
+          <ul>
+            <li>ወጣቶች</li>
+            <li>ጎልማሶች</li>
+            <li>ቤተሰቦች</li>
+            <li>ማንኛውም ፍላጎት ያለው ሰው</li>
+          </ul>
+        </div>
+        <div class="detail-side-block">
+          <h4>የመማሪያ ዘዴዎች</h4>
+          <ul>
+            <li>የመስመር ላይ የቡድን ክፍሎች</li>
+            <li>የመስመር ላይ የግል (ቪአይፒ)</li>
+            <li>ከቤት ወደ ቤት የግል (ቪአይፒ)</li>
+          </ul>
+          <div class="methods-note">ከቤተሰብ ወይም ከጓደኞች ጋር መማር ይፈልጋሉ? የግል ትምህርት ይጠይቁ እና ለእርስዎ በሚስማማ መርሃ ግብር በቡድን ሆነው አብረው ይማሩ።</div>
+        </div>
+        <div class="detail-cta-row">
+          <a href="contact-am.html" class="program-enroll">አሁኑኑ ይመዝገቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>የመማሪያ ጉዞዎን ለመጀመር ዝግጁ ነዎት?</h2>
+      <p>የበለጠ ሁሉን አቀፍ የወደፊት ሕይወትን ለማሳካት በሚሰሩ የተማሪዎች፣ የበጎ ፈቃደኞች፣ የአስተማሪዎች እና የአጋሮቻችን ማህበረሰብ ውስጥ ይቀላቀሉ።</p>
+      <div class="cta-actions">
+        <a href="programs-am.html#pnavCards" class="btn btn-primary">አሁኑኑ ይመዝገቡ</a>
+        <a href="contact-am.html" class="btn btn-primary">እኛን ያግኙ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.jpg" alt="Bridge logo" onerror="this.style.display='none'">
+          <span>Bridge Education Network</span>
+        </div>
+        <p>በጋራ፣ እድሎችን የሚፈጥሩ፣ ማህበረሰቦችን የሚያጠናክሩ እና ዘላቂ ለውጥን የሚያነቃቁ ድልድዮችን እየገነባን ነው።</p>
+      </div>
+      <div class="footer-col">
+        <h5>ዳስስ</h5>
+        <a href="index.html">መነሻ</a>
+        <a href="about-am.html">ስለ</a>
+        <a href="programs-am.html">ፕሮግራሞች</a>
+        <a href="gallery-am.html">ጋለሪ</a>
+        <a href="team-am.html">ቡድን</a>
+        <a href="contact-am.html">እኛን ያግኙ</a>
+      </div>
+      <div class="footer-col">
+        <h5>እኛን ያግኙ</h5>
+         <a href="tel:+251947319715">0947 319 715</a>
+        <a href="tel:+519940115655">0940 115 655</a>
+        <a href="tel:+251903283921">0903 283 921</a>
+        <a href="mailto:bridgeedunetwork@gmail.com">bridgeedunetwork@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Bridge Education Network. መብቱ በህግ የተጠበቀ ነው።</span>
+      <div class="footer-social">
+        <a href="mailto:bridgeedunetwork@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M3 6l9 7 9-7"/></svg></a>
+        <a href="https://www.linkedin.com/in/bridge-education-network-707793424/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="9" width="20" height="12" rx="2"/><path d="M16 3H8a2 2 0 00-2 2v4h12V5a2 2 0 00-2-2z"/></svg></a>
+        <a href="https://www.instagram.com/bridge_education_network/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://wa.me/251947319715" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  const progressFill = document.getElementById('bridge-progress-fill');
+  window.addEventListener('scroll', () => {
+    if(!header) return;
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    const h = document.documentElement;
+    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    if(progressFill) progressFill.style.width = pct + '%';
+  });
+
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  const navOverlay = document.getElementById('navOverlay');
+  function closeMenu(){
+    if(navLinks) navLinks.classList.remove('open');
+    if(navOverlay) navOverlay.classList.remove('open');
+    if(menuBtn){
+      menuBtn.textContent = '☰';
+      menuBtn.setAttribute('aria-label', 'ምናሌ ክፈት');
+    }
+  }
+  if(menuBtn && navLinks && navOverlay){
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navOverlay.classList.toggle('open', isOpen);
+      menuBtn.textContent = isOpen ? '✕' : '☰';
+      menuBtn.setAttribute('aria-label', isOpen ? 'ምናሌ ዝጋ' : 'ምናሌ ክፈት');
+    });
+    navOverlay.addEventListener('click', closeMenu);
+  }
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
+
+  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in-view'); } });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Scrollspy - highlight active program nav card
+  const pnavCards = document.querySelectorAll('.pnav-card');
+  const detailSections = document.querySelectorAll('.detail-section');
+  const spyIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const id = entry.target.id;
+        pnavCards.forEach(card => card.classList.toggle('active', card.dataset.target === id));
+      }
+    });
+  }, { threshold: 0.4, rootMargin: '-120px 0px -40% 0px' });
+  detailSections.forEach(sec => spyIO.observe(sec));
+
+  // Live countdown timers (dynamic, same as English version)
+  function initCountdown(el){
+    const target = new Date(el.dataset.countdown).getTime();
+    const dEl = el.querySelector('.cd-days'), hEl = el.querySelector('.cd-hours'), mEl = el.querySelector('.cd-mins'), sEl = el.querySelector('.cd-secs');
+    function tick(){
+      let diff = Math.max(0, target - Date.now());
+      const days = Math.floor(diff / 86400000); diff -= days * 86400000;
+      const hours = Math.floor(diff / 3600000); diff -= hours * 3600000;
+      const mins = Math.floor(diff / 60000); diff -= mins * 60000;
+      const secs = Math.floor(diff / 1000);
+      if(dEl) dEl.textContent = String(days).padStart(2,'0');
+      if(hEl) hEl.textContent = String(hours).padStart(2,'0');
+      if(mEl) mEl.textContent = String(mins).padStart(2,'0');
+      if(sEl) sEl.textContent = String(secs).padStart(2,'0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  }
+  document.querySelectorAll('[data-countdown]').forEach(initCountdown);
+</script>
+
+</body>
+</html>
