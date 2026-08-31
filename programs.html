@@ -13,8 +13,63 @@
 <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<style>
+  header#siteHeader nav{ position:relative; }
+  .lang-switch{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    padding:4px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background:#ffffff;
+    border:1px solid rgba(17,27,48,0.08);
+    border-radius:999px;
+    font-family:'Inter',sans-serif;
+    box-shadow:0 6px 20px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.10);
+  }
+  header#siteHeader.scrolled .lang-switch{
+    background:#ffffff;
+    border-color:rgba(17,27,48,0.10);
+    box-shadow:0 4px 14px rgba(17,27,48,0.14), 0 1px 4px rgba(17,27,48,0.08);
+  }
+  .lang-switch .lang-opt{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:40px;
+    padding:7px 14px;
+    font-size:12.5px;
+    font-weight:700;
+    font-family:'Noto Sans Ethiopic','Inter',sans-serif;
+    letter-spacing:.02em;
+    text-decoration:none;
+    border-radius:999px;
+    color:var(--navy, #16233f);
+    opacity:.7;
+    transition:opacity .2s ease, background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+  }
+  .lang-switch .lang-opt:hover{
+    opacity:1;
+    transform:translateY(-1px);
+    background:rgba(22,35,63,0.08);
+  }
+  .lang-switch .lang-opt.is-active{
+    opacity:1;
+    color:#fff;
+    background:var(--navy, #16233f);
+    box-shadow:0 3px 10px rgba(22,35,63,0.45);
+  }
+  .lang-switch .lang-opt.is-active:hover{ background:var(--navy, #16233f); }
+  @media (max-width:860px){
+    .lang-switch{ position:static; transform:none; margin-left:auto; order:2; }
+    .lang-switch .lang-opt{ padding:6px 11px; font-size:11.5px; min-width:34px; }
+  }
+</style>
 </head>
 <body>
 
@@ -29,6 +84,10 @@
         <small>Education Network</small>
       </div>
     </a>
+    <div class="lang-switch" role="group" aria-label="Language switch / ቋንቋ ይቀይሩ">
+      <a href="programs.html" class="lang-opt is-active">EN</a>
+      <a href="programs-am.html" class="lang-opt">አማ</a>
+    </div>
     <div class="nav-links" id="navLinks">
       <a href="index.html" onclick="closeMenu()">Home</a>
       <a href="about.html" onclick="closeMenu()">About</a>
@@ -179,6 +238,7 @@
           <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">Seconds</div></div>
         </div>
       </div>
+      <div class="cohort-alt">📅 <strong>This cohort schedule is for the Online Group Class.</strong> The countdown and schedule below apply only to the current Online Group Class cohort. VIP students aren't limited to these times — Online Private (VIP) and Home-to-Home Private (VIP) students can request their preferred days and time, depending on instructor availability.</div>
       <div class="schedule-grid">
         <div class="schedule-card">
           <h5>Beginner — Cohort 1</h5>
@@ -210,17 +270,17 @@
         </div>
         <div class="fee-card">
           <div class="fee-card-label">Online Group Class</div>
-          <div class="fee-card-amount">ETB 250<span>/ hour</span></div>
+          <div class="fee-card-amount">ETB 249<span>/ hour</span></div>
           <div class="fee-card-note">Students pay for the full course/level they are enrolling in. Course length: Beginner 12 hours · Intermediate 13 hours · Advanced 15 hours.</div>
         </div>
         <div class="fee-card">
           <div class="fee-card-label">Online Private (VIP)</div>
-          <div class="fee-card-amount">ETB 450<span>/ hour</span></div>
+          <div class="fee-card-amount">ETB 449<span>/ hour</span></div>
           <div class="fee-card-note">Flexible schedule · One-to-one instruction.</div>
         </div>
         <div class="fee-card">
           <div class="fee-card-label">Home-to-Home Private (VIP)</div>
-          <div class="fee-card-amount">From ETB 500<span>/ hour</span></div>
+          <div class="fee-card-amount">From ETB 499<span>/ hour</span></div>
           <div class="fee-card-note">Flexible schedule · One-to-one instruction · Transportation charges may apply depending on location.</div>
         </div>
       </div>
@@ -229,6 +289,13 @@
         <div>
           <h6>Home-to-Home Private</h6>
           <p>For Home-to-Home learning, please contact us directly. Our team will discuss your location, schedule, instructor availability, and tuition before you apply.</p>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>Payment Terms</h6>
+          <p>Students pay for the full course in advance, before registration is finalized.</p>
         </div>
       </div>
     </div>
@@ -338,18 +405,25 @@
         </div>
         <div class="fee-card">
           <div class="fee-card-label">Online Group Class</div>
-          <div class="fee-card-amount">ETB 250<span>/ hour</span></div>
+          <div class="fee-card-amount">ETB 199<span>/ hour</span></div>
           <div class="fee-card-note">Students pay for the full course/level they are enrolling in.</div>
         </div>
         <div class="fee-card">
           <div class="fee-card-label">Online Private (VIP)</div>
-          <div class="fee-card-amount">ETB 450<span>/ hour</span></div>
+          <div class="fee-card-amount">ETB 449<span>/ hour</span></div>
           <div class="fee-card-note">One-to-one instruction.</div>
         </div>
         <div class="fee-card">
           <div class="fee-card-label">Home-to-Home Private (VIP)</div>
-          <div class="fee-card-amount">From ETB 500<span>/ hour</span></div>
+          <div class="fee-card-amount">From ETB 499<span>/ hour</span></div>
           <div class="fee-card-note">Transportation charges may apply depending on location.</div>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>Payment Terms</h6>
+          <p>Students pay for a minimum of 8 hours (one month) in advance, before registration is finalized.</p>
         </div>
       </div>
     </div>
@@ -451,13 +525,6 @@
           <div class="sched-start">Starting September 19, 2026</div>
         </div>
       </div>
-      <div class="fee-notice" style="margin-top:20px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-        <div>
-          <h6>A Progressive Learning Path</h6>
-          <p>Pencil Drawing and Watercolor/Oil/Acrylic Painting are taught as one progressive path in the same Saturday session: students begin with Pencil Drawing to build a strong foundation, then progress into Watercolor/Oil/Acrylic Painting.</p>
-        </div>
-      </div>
       <div class="cohort-alt">📅 <strong>Don't see a suitable schedule?</strong> Please <a href="contact.html" style="color:var(--navy);font-weight:700;text-decoration:underline;">Contact Us</a> to discuss alternative schedules, private lessons, or future group cohorts.</div>
     </div>
 
@@ -493,6 +560,13 @@
         <div>
           <h6>Home-to-Home Private</h6>
           <p>For Home-to-Home learning, please contact us directly. Our team will discuss your location, schedule, instructor availability, and tuition before you apply.</p>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>Payment Terms</h6>
+          <p>Payment is made in two parts: half of the tuition is paid at registration, and the remaining half is paid afterward.</p>
         </div>
       </div>
     </div>
@@ -600,13 +674,6 @@
           <div class="sched-start">Starting September 16, 2026</div>
         </div>
       </div>
-      <div class="fee-notice" style="margin-top:20px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-        <div>
-          <h6>Program Start Date</h6>
-          <p>September 14, 2026 marks the Theology program's first starting date. Each individual study area then begins on its own weekly day as shown above.</p>
-        </div>
-      </div>
       <div class="cohort-alt">📅 <strong>Don't see a suitable schedule?</strong> Please <a href="contact.html" style="color:var(--navy);font-weight:700;text-decoration:underline;">Contact Us</a> to discuss alternative schedules, private lessons, or future group cohorts.</div>
     </div>
 
@@ -642,6 +709,13 @@
         <div>
           <h6>Home-to-Home Private</h6>
           <p>For Home-to-Home learning, please contact us directly. Our team will discuss your location, schedule, instructor availability, and tuition before you apply.</p>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>Payment Terms</h6>
+          <p>Payment is made in two parts: half of the tuition is paid at registration, and the remaining half is paid afterward.</p>
         </div>
       </div>
     </div>
@@ -833,4 +907,3 @@
 
 </body>
 </html>
-
