@@ -13,8 +13,63 @@
 <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<style>
+  header#siteHeader nav{ position:relative; }
+  .lang-switch{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    padding:4px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background:#ffffff;
+    border:1px solid rgba(17,27,48,0.08);
+    border-radius:999px;
+    font-family:'Inter',sans-serif;
+    box-shadow:0 6px 20px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.10);
+  }
+  header#siteHeader.scrolled .lang-switch{
+    background:#ffffff;
+    border-color:rgba(17,27,48,0.10);
+    box-shadow:0 4px 14px rgba(17,27,48,0.14), 0 1px 4px rgba(17,27,48,0.08);
+  }
+  .lang-switch .lang-opt{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:40px;
+    padding:7px 14px;
+    font-size:12.5px;
+    font-weight:700;
+    font-family:'Noto Sans Ethiopic','Inter',sans-serif;
+    letter-spacing:.02em;
+    text-decoration:none;
+    border-radius:999px;
+    color:var(--navy, #16233f);
+    opacity:.7;
+    transition:opacity .2s ease, background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+  }
+  .lang-switch .lang-opt:hover{
+    opacity:1;
+    transform:translateY(-1px);
+    background:rgba(22,35,63,0.08);
+  }
+  .lang-switch .lang-opt.is-active{
+    opacity:1;
+    color:#fff;
+    background:var(--navy, #16233f);
+    box-shadow:0 3px 10px rgba(22,35,63,0.45);
+  }
+  .lang-switch .lang-opt.is-active:hover{ background:var(--navy, #16233f); }
+  @media (max-width:860px){
+    .lang-switch{ position:static; transform:none; margin-left:auto; order:2; }
+    .lang-switch .lang-opt{ padding:6px 11px; font-size:11.5px; min-width:34px; }
+  }
+</style>
 </head>
 <body>
 
@@ -29,6 +84,10 @@
         <small>Education Network</small>
       </div>
     </a>
+    <div class="lang-switch" role="group" aria-label="Language switch / ቋንቋ ይቀይሩ">
+      <a href="index.html" class="lang-opt is-active">EN</a>
+      <a href="index-am.html" class="lang-opt">አማ</a>
+    </div>
     <div class="nav-links" id="navLinks">
       <a href="index.html" onclick="closeMenu()">Home</a>
       <a href="about.html" onclick="closeMenu()">About</a>
@@ -116,10 +175,10 @@
             </ul>
             <h5>Applications Open — Cohort 1</h5>
             <ul>
-              <li>Beginner: Tue &amp; Sat, 3:00–4:00 PM or 7:00–8:00 PM — starts Aug 15, 2026</li>
-              <li>Intermediate: Tue &amp; Sat, 4:00–5:00 PM or 6:00–7:00 PM — starts Aug 15–18, 2026</li>
+              <li>Beginner: Friday &amp; Saturday, 5:45–6:45 PM (LT)</li>
+              <li>Starting September 18, 2026</li>
             </ul>
-            <div class="countdown-row" data-countdown="2026-08-15T00:00:00+03:00" style="margin-top:14px;">
+            <div class="countdown-row" data-countdown="2026-09-18T00:00:00+03:00" style="margin-top:14px;">
               <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">Days</div></div>
               <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">Hours</div></div>
               <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">Minutes</div></div>
@@ -134,7 +193,7 @@
           <h3>Bridge Art Class</h3>
           <div class="summary-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></div>
         </div>
-        <span class="coming-soon-badge" style="position:static;display:inline-block;margin-top:8px;">Coming Soon</span>
+       
         <p class="summary-desc">Three learning tracks in drawing, painting, and Orthodox iconography.</p>
         <div class="summary-body">
           <div class="summary-body-inner">
@@ -149,6 +208,18 @@
               <li>Home-to-Home Private (VIP)</li>
               <li>Schools and Organizations</li>
             </ul>
+            <h5>Applications Open</h5>
+            <ul>
+              <li>Pencil Drawing / Watercolor / Oil / Acrylic: Saturday, 4:00–5:00 PM (LT)</li>
+              <li>Orthodox Iconography: Sunday, 4:00–5:00 PM (LT)</li>
+              <li>Program starts: September 19, 2026</li>
+            </ul>
+            <div class="countdown-row" data-countdown="2026-09-19T00:00:00+03:00" style="margin-top:14px;">
+              <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">Days</div></div>
+              <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">Hours</div></div>
+              <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">Minutes</div></div>
+              <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">Seconds</div></div>
+            </div>
             <a href="programs.html#art-school" class="summary-learnmore">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
@@ -173,11 +244,10 @@
             </ul>
             <h5>Applications Open</h5>
             <ul>
-              <li>Reading Division: Mon &amp; Fri, 3:00–4:00 PM</li>
-              <li>Melody Division: Mon &amp; Fri, 4:00–5:00 PM</li>
-              <li>Starting August 17, 2026</li>
+              <li>Abenet Group Class: Saturday &amp; Sunday, 6:00–7:00 PM (LT)</li>
+              <li>Starting September 15, 2026</li>
             </ul>
-            <div class="countdown-row" data-countdown="2026-08-17T00:00:00+03:00" style="margin-top:14px;">
+            <div class="countdown-row" data-countdown="2026-09-15T00:00:00+03:00" style="margin-top:14px;">
               <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">Days</div></div>
               <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">Hours</div></div>
               <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">Minutes</div></div>
@@ -192,7 +262,7 @@
           <h3>Bridge Orthodox Theology Class</h3>
           <div class="summary-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></div>
         </div>
-        <span class="coming-soon-badge" style="position:static;display:inline-block;margin-top:8px;">Coming Soon</span>
+   
         <p class="summary-desc">Three study areas in Bible study, church dogma, and church history.</p>
         <div class="summary-body">
           <div class="summary-body-inner">
@@ -206,6 +276,19 @@
               <li>Online Private (VIP)</li>
               <li>Home-to-Home Private (VIP)</li>
             </ul>
+            <h5>Applications Open</h5>
+            <ul>
+              <li>Church Dogma: Monday — starting September 14, 2026</li>
+              <li>Church History: Tuesday — starting September 15, 2026</li>
+              <li>Bible Study: Wednesday — starting September 16, 2026</li>
+              <li>All Theology classes: 7:30–8:30 PM (LT)</li>
+            </ul>
+            <div class="countdown-row" data-countdown="2026-09-14T00:00:00+03:00" style="margin-top:14px;">
+              <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">Days</div></div>
+              <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">Hours</div></div>
+              <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">Minutes</div></div>
+              <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">Seconds</div></div>
+            </div>
             <a href="programs.html#theology" class="summary-learnmore">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
@@ -336,10 +419,9 @@
       </div>
       <div class="footer-col">
         <h5>Contact</h5>
-        <a href="tel:+251947319715">0947 319 715</a>
-        <a href="tel:+251942530052">0942 530 052</a>
-        <a href="tel:+251900134148">0900 134 148</a>
-        <a href="tel:+251996985480">0996 985 480</a>
+      <a href="tel:+251947319715">0947 319 715</a>
+        <a href="tel:+519940115655">0940 115 655</a>
+        <a href="tel:+251903283921">0903 283 921</a>
         <a href="mailto:bridgeedunetwork@gmail.com">bridgeedunetwork@gmail.com</a>
       </div>
     </div>
@@ -438,3 +520,4 @@
 </script>
 
 </body>
+</html>
