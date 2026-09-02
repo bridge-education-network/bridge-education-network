@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ብሪጅ የትምህርት ኔትወርክ</title>
+<meta name="description" content="በኢትዮጵያ ውስጥ ተደራሽ እና ሁሉን አቀፍ ትምህርት በምልክት ቋንቋ፣ በስነ ጥበብ፣ በኦርቶዶክስ አብነት እና በነገረ ሃይማኖት የሚያስተምር በወጣቶች የሚመራ ድርጅት።">
+
+<meta property="og:description" content="በትምህርት እና በተሳትፎ ድልድዮችን መገንባት — ለሁሉም ሰው የምልክት ቋንቋ፣ ስነ ጥበብ፣ የኦርቶዶክስ አብነት እና ነገረ ሃይማኖት ፕሮግራሞች።">
+<meta property="og:image" content="assets/hero-group.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+<link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=Noto+Serif+Ethiopic:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  header#siteHeader nav{ position:relative; }
+  .lang-switch{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    padding:4px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background:#ffffff;
+    border:1px solid rgba(17,27,48,0.08);
+    border-radius:999px;
+    font-family:'Inter',sans-serif;
+    box-shadow:0 6px 20px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.10);
+  }
+  header#siteHeader.scrolled .lang-switch{
+    background:#ffffff;
+    border-color:rgba(17,27,48,0.10);
+    box-shadow:0 4px 14px rgba(17,27,48,0.14), 0 1px 4px rgba(17,27,48,0.08);
+  }
+  .lang-switch .lang-opt{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:40px;
+    padding:7px 14px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.02em;
+    text-decoration:none;
+    border-radius:999px;
+    color:var(--navy, #16233f);
+    opacity:.7;
+    transition:opacity .2s ease, background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+  }
+  .lang-switch .lang-opt:hover{
+    opacity:1;
+    transform:translateY(-1px);
+    background:rgba(22,35,63,0.08);
+  }
+  .lang-switch .lang-opt.is-active{
+    opacity:1;
+    color:#fff;
+    background:var(--navy, #16233f);
+    box-shadow:0 3px 10px rgba(22,35,63,0.45);
+  }
+  .lang-switch .lang-opt.is-active:hover{ background:var(--navy, #16233f); }
+  @media (max-width:860px){
+    .lang-switch{ position:static; transform:none; margin-left:auto; order:2; }
+    .lang-switch .lang-opt{ padding:6px 11px; font-size:11.5px; min-width:34px; }
+  }
+  body{ font-family:'Noto Sans Ethiopic', var(--sans, 'Inter'), sans-serif; }
+  h1,h2,h3,h4,.brand span,.eyebrow{ font-family:'Noto Serif Ethiopic', var(--serif, 'Source Serif 4'), serif; }
+</style>
+</head>
+<body>
+
+<div id="bridge-progress"><div id="bridge-progress-fill"></div></div>
+
+<header id="siteHeader">
+  <nav>
+    <a href="index.html#home" class="brand">
+      <img src="assets/logo.jpg" alt="Bridge Education Network logo" onerror="this.style.display='none'">
+      <div>
+        <span>Bridge</span>
+        <small>Education Network</small>
+      </div>
+    </a>
+    <div class="lang-switch" role="group" aria-label="ቋንቋ ይቀይሩ / Language switch">
+      <a href="index.html" class="lang-opt">EN</a>
+      <a href="index-am.html" class="lang-opt is-active">አማ</a>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index-am.html" onclick="closeMenu()">መነሻ</a>
+      <a href="about-am.html" onclick="closeMenu()">ስለ</a>
+      <a href="programs-am.html" onclick="closeMenu()">ፕሮግራሞች</a>
+      <a href="gallery-am.html" onclick="closeMenu()">ጋለሪ</a>
+      <a href="team-am.html" onclick="closeMenu()">ቡድን</a>
+      <a href="contact-am.html" onclick="closeMenu()">እኛን ያግኙ</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="ምናሌ ክፈት">☰</button>
+  </nav>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-content">
+    <div class="eyebrow">የብሪጅ ትምህርት ኔትወርክ</div>
+    <h1>በ<em>ትምህርት</em> እና በተሳትፎ ድልድዮችን መገንባት።</h1>
+    <p class="hero-sub">እኛ ለሁሉም ሰው ተደራሽ እና ሁሉን አቀፍ ትምህርት በመገንባት፣ የኢትዮጵያን የምልክት ቋንቋ፣ ስነ ጥበብ፣ የኦርቶዶክስ አብነት እና የኦርቶዶክስ ሥነ-መለኮትን የሚያስተምር በወጣቶች የሚመራ ድርጅት ነን።</p>
+    <div class="hero-actions">
+      <a href="programs-am.html" class="btn btn-primary">ፕሮግራሞችን ያስሱ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#involved" class="btn btn-outline">ተሳተፍ</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stats-inner">
+      <div class="stat">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/><circle cx="18" cy="7.5" r="2.5"/><path d="M22 21v-1.5a3.5 3.5 0 00-2.5-3.36"/></svg></div>
+        <div><div class="num counter-num" data-target="100" data-suffix="+">0</div><div class="lbl">ተማሪዎች ተመዝግበዋል</div></div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.2-6.3-4.5L5.7 21l2.3-7.2-6-4.4h7.6z"/></svg></div>
+        <div><div class="num counter-num" data-target="41" data-suffix="">0</div><div class="lbl">የፕሮግራም ተመራቂዎች</div></div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></div>
+        <div><div class="num">2025</div><div class="lbl">በል/ካ/ካ/ት/ቤት የተመሰረተ</div></div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <div><div class="num counter-num" data-target="4" data-suffix="">0</div><div class="lbl">የሚቀርቡ ፕሮግራሞች</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bridge-divider" id="bridgeDivider">
+  <svg viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,48 C150,48 150,16 300,16 C450,16 450,48 600,48 C750,48 750,16 900,16 C1050,16 1050,48 1200,48" />
+    <circle cx="300" cy="16" r="4"/>
+    <circle cx="600" cy="48" r="4"/>
+    <circle cx="900" cy="16" r="4"/>
+  </svg>
+</div>
+
+<!-- OUR PROGRAMS -->
+<section class="section section-parchment" id="programs">
+  <div class="wrap">
+    <div class="head-lg reveal">
+      <div class="eyebrow dark">ፕሮግራሞቻችን</div>
+      <h2>የምናስተምረውን ነገር ያስሱ</h2>
+      <p>አራት ፕሮግራሞች፣ አንድ ተልዕኮ። አንድ ፕሮግራም ለማየት ጠቅ ያድርጉ ወይም ሙሉ የፕሮግራሙን ገጾች ይመልከቱ።</p>
+    </div>
+    <div class="summary-programs-grid reveal-stagger">
+      <div class="summary-card" onclick="this.classList.toggle('expanded')">
+        <div class="summary-card-top">
+          <h3>የብሪጅ ምልክት ቋንቋ ክፍል</h3>
+          <div class="summary-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <p class="summary-desc">ከጀማሪ እስከ ከፍተኛ ደረጃ ድረስ ሙያዊ የኢትዮጵያ የምልክት ቋንቋ ስልጠና።</p>
+        <div class="summary-body">
+          <div class="summary-body-inner">
+            <h5>ምንድን ነው?</h5>
+            <p>ከጀማሪ እስከ ከፍተኛ ደረጃ ድረስ ሙያዊ የኢትዮጵያ የምልክት ቋንቋ ስልጠና፣ መስማት የተሳናቸውን እና የመስማት ችሎታ ያላቸው ማህበረሰቦች መካከል ግንኙነትን ለማጠናከር ይረዳል።</p>
+            <h5>ለማን ነው</h5>
+            <p>ሁሉም ሰው።</p>
+            <h5>የመማሪያ ዘዴዎች</h5>
+            <ul>
+              <li>የመስመር ላይ የቡድን ክፍሎች</li>
+              <li>የመስመር ላይ የግል (ቪአይፒ)</li>
+              <li>ከቤት ወደ ቤት የግል (ቪአይፒ)</li>
+              <li>ትምህርት ቤቶች እና ድርጅቶች</li>
+            </ul>
+            <h5>ምዝገባዎች ክፍት ናቸው — ቡድን 1</h5>
+            <ul>
+              <li>ጀማሪ — ቡድን 1፡ አርብ እና ቅዳሜ፣ ከምሽቱ 11:45 – 12:45 ሰዓት</li>
+              <li>ከመስከረም 8፣ 2019 ጀምሮ</li>
+            </ul>
+            <div class="countdown-row" data-countdown="2026-09-18T00:00:00+03:00" style="margin-top:14px;">
+              <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">ቀናት</div></div>
+              <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">ሰዓት</div></div>
+              <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">ደቂቃዎች</div></div>
+              <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">ሰከንዶች</div></div>
+            </div>
+            <a href="programs-am.html#sign-language" class="summary-learnmore">ተጨማሪ ይወቁ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="summary-card" onclick="this.classList.toggle('expanded')">
+        <div class="summary-card-top">
+          <h3>የብሪጅ አርት ክፍል</h3>
+          <div class="summary-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+       
+        <p class="summary-desc">በሥዕል፣ በቀለም ትምህርት እና በኦርቶዶክስ ቅዱሳት ስዕላት ውስጥ ሦስት የመማሪያ ትራኮች።</p>
+        <div class="summary-body">
+          <div class="summary-body-inner">
+            <h5>ምንድን ነው?</h5>
+            <p>የእርሳስ ስዕል፣ የውሃ ቀለም እና ዘይት፣ የአክሬሊክ ሥዕል እና የኦርቶዶክስ ቅዱሳት ስዕላት የሚያካትት መማሪያ ትራክ።</p>
+            <h5>ለማን ነው</h5>
+            <p>ሁሉም ሰው።</p>
+            <h5>የመማሪያ ዘዴዎች</h5>
+            <ul>
+              <li>የመስመር ላይ የቡድን ክፍሎች</li>
+              <li>የመስመር ላይ የግል (ቪአይፒ)</li>
+              <li>ከቤት ወደ ቤት የግል (ቪአይፒ)</li>
+              <li>ትምህርት ቤቶች እና ድርጅቶች</li>
+            </ul>
+            <h5>ምዝገባዎች ክፍት ናቸው</h5>
+            <ul>
+              <li>የእርሳስ ስዕል / የውሃ ቀለም / ዘይት / አክሬሊክ፡ ቅዳሜ፣ ከቀኑ 4:00–5:00 ሰዓት</li>
+              <li>የኦርቶዶክስ ቅዱሳት ስዕላት፡ እሑድ፣ ከቀኑ 4:00–5:00 ሰዓት</li>
+              <li>ፕሮግራሙ የሚጀምረው፡ መስከረም 9፣ 2019</li>
+            </ul>
+            <div class="countdown-row" data-countdown="2026-09-19T00:00:00+03:00" style="margin-top:14px;">
+              <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">ቀናት</div></div>
+              <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">ሰዓት</div></div>
+              <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">ደቂቃዎች</div></div>
+              <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">ሰከንዶች</div></div>
+            </div>
+            <a href="programs-am.html#art-school" class="summary-learnmore">ተጨማሪ ይወቁ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="summary-card" onclick="this.classList.toggle('expanded')">
+        <div class="summary-card-top">
+          <h3>የብሪጅ አብነት ክፍል</h3>
+          <div class="summary-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <p class="summary-desc">ትውፊታዊ የኢትዮጵያ ኦርቶዶክስ ንባብ እና የዜማ ትምህርት።</p>
+        <div class="summary-body">
+          <div class="summary-body-inner">
+            <h5>ምንድን ነው?</h5>
+            <p>ትውፊታዊ የኢትዮጵያ ኦርቶዶክስ ንባብ እና የዜማ ትምህርት በሁለት ክፍሎች።</p>
+            <h5>ለማን ነው</h5>
+            <p>ልጆች፣ ወጣቶች፣ ጎልማሶች፣ ቤተሰቦች እና ማንኛውም ፍላጎት ያለው ሰው።</p>
+            <h5>የመማሪያ ዘዴዎች</h5>
+            <ul>
+              <li>የመስመር ላይ የቡድን ክፍሎች</li>
+              <li>የመስመር ላይ የግል (ቪአይፒ)</li>
+              <li>ከቤት ወደ ቤት የግል (ቪአይፒ)</li>
+            </ul>
+            <h5>ምዝገባዎች ክፍት ናቸው</h5>
+            <ul>
+              <li>አብነት — የቡድን ክፍል፡ ቅዳሜ እና እሁድ፣ ማታ 12:00 – 1:00 ሰዓት</li>
+              <li>ከመስከረም 5፣ 2019 ጀምሮ</li>
+            </ul>
+            <div class="countdown-row" data-countdown="2026-09-15T00:00:00+03:00" style="margin-top:14px;">
+              <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">ቀናት</div></div>
+              <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">ሰዓት</div></div>
+              <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">ደቂቃዎች</div></div>
+              <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">ሰከንዶች</div></div>
+            </div>
+            <a href="programs-am.html#abenet" class="summary-learnmore">ተጨማሪ ይወቁ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="summary-card" onclick="this.classList.toggle('expanded')">
+        <div class="summary-card-top">
+          <h3>የብሪጅ ኦርቶዶክስ ነገረ ሃይማኖት ክፍል</h3>
+          <div class="summary-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+   
+        <p class="summary-desc">በመጽሐፍ ቅዱስ ጥናት፣ በቤተክርስቲያን ዶግማ እና በቤተክርስቲያን ታሪክ ውስጥ ሦስት የጥናት ዘርፎች።</p>
+        <div class="summary-body">
+          <div class="summary-body-inner">
+            <h5>ምንድን ነው?</h5>
+            <p>የመጽሐፍ ቅዱስ ጥናትን፣ የቤተክርስቲያን ዶግማ እና የቤተክርስቲያን ታሪክን የሚሸፍኑ ሦስት የጥናት ዘርፎች።</p>
+            <h5>ለማን ነው</h5>
+            <p>ልጆች፣ ወጣቶች፣ ጎልማሶች፣ ቤተሰቦች እና ማንኛውም ፍላጎት ያለው ሰው።</p>
+            <h5>የመማሪያ ዘዴዎች</h5>
+            <ul>
+              <li>የቡድን ክፍሎች</li>
+              <li>የመስመር ላይ የግል (ቪአይፒ)</li>
+              <li>ከቤት ወደ ቤት የግል (ቪአይፒ)</li>
+            </ul>
+            <h5>ምዝገባዎች ክፍት ናቸው</h5>
+            <ul>
+              <li>የቤተክርስቲያን ዶግማ፡ ሰኞ — ከመስከረም 4፣ 2019 ጀምሮ</li>
+              <li>የቤተክርስቲያን ታሪክ፡ ማክሰኞ — ከመስከረም 5፣ 2019 ጀምሮ</li>
+              <li>የመጽሐፍ ቅዱስ ጥናት፡ ረቡዕ — ከመስከረም 6፣ 2019 ጀምሮ</li>
+              <li>ሁሉም የነገረ ሃይማኖት ትምህርቶች፡ ማታ 1:30 – 2:30 ሰዓት</li>
+            </ul>
+            <div class="countdown-row" data-countdown="2026-09-14T00:00:00+03:00" style="margin-top:14px;">
+              <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">ቀናት</div></div>
+              <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">ሰዓት</div></div>
+              <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">ደቂቃዎች</div></div>
+              <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">ሰከንዶች</div></div>
+            </div>
+            <a href="programs-am.html#theology" class="summary-learnmore">ተጨማሪ ይወቁ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:44px;">
+      <a href="programs-am.html" class="btn btn-primary" style="background:var(--navy);color:#fff;">ሁሉንም ፕሮግራሞች ይመልከቱ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY (short) -->
+<section class="section" id="story">
+  <div class="wrap">
+    <div class="head-lg reveal">
+      <div class="eyebrow dark">ታሪካችን</div>
+      <h2>አንድ ቀላል ምልከታ እንዴት እንቅስቃሴ ሆነ</h2>
+      <p>ብሪጅ የተጀመረው በ2025 በልደታ ካቶሊክ ካቴድራል ትምህርት ቤት ብሪጅ ምልክት ቋንቋ ክበብ ሆኖ ነው። በተማሪዎች ተነሳሽነት ተጀምሮ ከ100 በላይ ተማሪዎችን ያሰለጠነ ሲሆን 41 ተማሪዎችን በመጀመሪያው ዙር አስመርቋል፤ ይህም ለሰፊው የትምህርት መረብ መሠረት ሆኗል።</p>
+      <a href="about-am.html" class="btn btn-primary" style="margin-top:28px;">ተጨማሪ ያንብቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER'S MESSAGE -->
+<section class="section section-dark">
+  <div class="wrap">
+    <div class="head-lg reveal">
+      <div class="eyebrow">የመስራች መልእክት</div>
+      <h2 style="color:var(--white);">በትምህርት ድልድዮችን መገንባት</h2>
+    </div>
+    <div class="founder-msg-panel reveal">
+      <div class="founder-msg-quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 8a3 3 0 00-3 3v2a3 3 0 003 3h1v3l-4-1M17 8a3 3 0 00-3 3v2a3 3 0 003 3h1v3l-4-1"/></svg></div>
+      <blockquote>"እያንዳንዱ ትርጉም ያለው ለውጥ የሚጀምረው በአንድ እርምጃ ነው። ብሪጅ የተፈጠረው እንቅፋቶችን ለማስወገድ፣ በሮችን ለመክፈት እና ሰዎች የራሳቸውንም ሆነ የሌሎችን ሕይወት የሚያበለጽጉ ክህሎቶችን የመማር እድል እንዲያገኙ ነው። ራዕያችን ኮርሶችን ከማስተማር በላይ ይዘልቃል። ትምህርት፣ ባህል፣ አገልግሎት፣ ፈጠራ እና ተሳትፎ የሚገናኙበት ማህበረሰብ እየገነባን ነው። እንደ ተማሪ፣ አስተማሪ፣ በጎ ፈቃደኛ ወይም አጋር ሆነው ቢቀላቀሉን፣ በመማር ጠንካራ ማህበረሰቦችን የመገንባት ጉዞ ውስጥ አካል ይሆናሉ።"</blockquote>
+      <div class="founder-msg-sign">
+        <div class="name">Abenezer Admasu Tinsae</div>
+        <div class="role">የብሪጅ ኤጁኬሽን ኔትወርክ መስራች እና ፕሬዝዳንት</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOOKING AHEAD -->
+<section class="section section-navy">
+  <div class="wrap">
+    <div class="head-lg reveal">
+      <div class="eyebrow">የወደፊት እቅድ</div>
+      <h2>ቀጥሎ የምንገነባው</h2>
+    </div>
+    <div class="ahead-grid reveal-stagger">
+      <div class="ahead-featured">
+        <div class="ahead-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h18M12 3v18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg></div>
+        <div>
+          <h4>ትምህርትን በሁሉም ቦታ ተደራሽ ማድረግ</h4>
+          <p>የትምህርት ፕሮግራሞቻችንን በቀጥታ ወደ ቤቶች፣ አብያተ ክርስቲያናት፣ ትምህርት ቤቶች እና ወደ ማህበረሰቡ በማምጣት ከመማሪያ ክፍሎች ባሻገር እየሰፋን ነው። ራዕያችን በአካልም ሆነ በመስመር ላይ ጥራት ያለው ትምህርት ለሁሉም ሰው ተደራሽ እና ሁሉን አቀፍ እንዲሆን ማድረግ ነው።</p>
+        </div>
+      </div>
+      <div class="ahead-card">
+        <div class="ahead-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 12h20M2 12a10 10 0 0110-10M2 12a10 10 0 0010 10M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg></div>
+        <p>የምልክት ቋንቋ ትምህርትን በመላው ኢትዮጵያ ማስፋፋት</p>
+      </div>
+      <div class="ahead-card">
+        <div class="ahead-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/><circle cx="18" cy="7.5" r="2.5"/><path d="M22 21v-1.5a3.5 3.5 0 00-2.5-3.36"/></svg></div>
+        <p>ከትምህርት ቤቶችና ከማህበረሰቡ ጋር ሽርክና መገንባት</p>
+      </div>
+      <div class="ahead-card">
+        <div class="ahead-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <p>የትምህርት ተደራሽነትን በቴክኖሎጂ መደገፍ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GET INVOLVED -->
+<section class="section section-dark" id="involved">
+  <div class="wrap">
+    <div class="head-lg reveal">
+      <div class="eyebrow">ተሳተፍ</div>
+      <h2>ከእኛ ጋር ድልድዮችን ለመገንባት ዝግጁ ነዎት?</h2>
+      <p>ትምህርቱን የበለጠ ተደራሽ እና ሁሉን አቀፍ ለማድረግ አብረው የሚሰሩ ተማሪዎች፣ አስተማሪዎች፣ በጎ ፈቃደኞች፣ ትምህርት ቤቶች፣ አብያተ ክርስቲያናት፣ ድርጅቶች እና ማህበረሰብ ቡድኖች ይቀላቀሉ።</p>
+    </div>
+    <div class="involve-grid-4 reveal-stagger">
+      <div class="involve-card-4">
+        <div class="involve-icon-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></div>
+        <h4>ተማሪ ይሁኑ</h4>
+        <p>ከትምህርት ፕሮግራሞቻችን በአንዱ ይመዝገቡ።</p>
+        <a href="programs-am.html" class="btn-mini">ተማሪ ይሁኑ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="involve-card-4">
+        <div class="involve-icon-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 11-5.8-1.6"/></svg></div>
+        <h4>አስተማሪ ይሁኑ</h4>
+        <p>እውቀትዎን ያጋሩ ከብሪጅ ጋር ያስተምሩ።</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeexJtd1vPkFX62bIq1WUxkhwI988SC7ESayJjT0i0_mYStSA/viewform?usp=header" target="_blank" rel="noopener" class="btn-mini">አስተማሪ ይሁኑ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="involve-card-4">
+        <div class="involve-icon-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></div>
+        <h4>ከእኛ ጋር አጋር ይሁኑ</h4>
+        <p>ብሪጅን ወደ ትምህርት ቤትዎ፣ ቤተክርስቲያንዎ፣ የሰንበት ትምህርት ቤትዎ፣ ዩኒቨርሲቲዎ ወይም ድርጅትዎ ይጋብዙ።</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSenZ641328FduWe3-IE26QfKXOVllN1DyhtoxNlYPqR67pShw/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn-mini">ከእኛ ጋር አጋር ይሁኑ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="involve-card-4">
+        <div class="involve-icon-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 000-7.8z"/></svg></div>
+        <h4>በጎ ፈቃደኛ ይሁኑ</h4>
+        <p>ዝግጅቶችን በማደራጀት፣ ተማሪዎችን በመደገፍ፣ ይዘት በመፍጠር፣ ቁሳቁሶችን በመተርጎም ወይም ሙያዊ ክህሎቶችዎን በማበርከት ያግዙ።</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScnXI7FhmiaOCxs4dlCKsOkVjYGXLHRwp_Mey73QpiS1-8Lzw/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn-mini">በጎ ፈቃደኛ ይሁኑ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.jpg" alt="Bridge logo" onerror="this.style.display='none'">
+          <span>Bridge Education Network</span>
+        </div>
+        <p>በጋራ፣ እድሎችን የሚፈጥሩ፣ ማህበረሰቦችን የሚያጠናክሩ እና ዘላቂ ለውጥን የሚያነቃቁ ድልድዮችን እየገነባን ነው።</p>
+      </div>
+      <div class="footer-col">
+        <h5>ዳስስ</h5>
+        <a href="index-am.html">መነሻ</a>
+        <a href="about-am.html">ስለ</a>
+        <a href="programs-am.html">ፕሮግራሞች</a>
+        <a href="gallery-am.html">ጋለሪ</a>
+        <a href="team-am.html">ቡድን</a>
+        <a href="contact-am.html">እኛን ያግኙ</a>
+      </div>
+      <div class="footer-col">
+        <h5>እኛን ያግኙ</h5>
+      <a href="tel:+251947319715">0947 319 715</a>
+        <a href="tel:+519940115655">0940 115 655</a>
+        <a href="tel:+251903283921">0903 283 921</a>
+        <a href="mailto:bridgeedunetwork@gmail.com">bridgeedunetwork@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Bridge Education Network. መብቱ በህግ የተጠበቀ ነው።</span>
+      <div class="footer-social">
+        <a href="mailto:bridgeedunetwork@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M3 6l9 7 9-7"/></svg></a>
+        <a href="https://www.linkedin.com/in/bridge-education-network-707793424/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="9" width="20" height="12" rx="2"/><path d="M16 3H8a2 2 0 00-2 2v4h12V5a2 2 0 00-2-2z"/></svg></a>
+        <a href="https://www.instagram.com/bridge_education_network/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://wa.me/251947319715" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  const progressFill = document.getElementById('bridge-progress-fill');
+  window.addEventListener('scroll', () => {
+    if(!header) return;
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    const h = document.documentElement;
+    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    if(progressFill) progressFill.style.width = pct + '%';
+  });
+
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  const navOverlay = document.getElementById('navOverlay');
+  function closeMenu(){
+    if(navLinks) navLinks.classList.remove('open');
+    if(navOverlay) navOverlay.classList.remove('open');
+    if(menuBtn){
+      menuBtn.textContent = '☰';
+      menuBtn.setAttribute('aria-label', 'ምናሌ ክፈት');
+    }
+  }
+  if(menuBtn && navLinks && navOverlay){
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navOverlay.classList.toggle('open', isOpen);
+      menuBtn.textContent = isOpen ? '✕' : '☰';
+      menuBtn.setAttribute('aria-label', isOpen ? 'ምናሌ ዝጋ' : 'ምናሌ ክፈት');
+    });
+    navOverlay.addEventListener('click', closeMenu);
+  }
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
+
+  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger, .bridge-divider');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in-view'); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  const counters = document.querySelectorAll('.counter-num');
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1400;
+        const start = performance.now();
+        function tick(now){
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target) + suffix;
+          if(progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        counterIO.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(el => counterIO.observe(el));
+
+  // Live countdown timers (dynamic, same as English version)
+  function initCountdown(el){
+    const target = new Date(el.dataset.countdown).getTime();
+    const dEl = el.querySelector('.cd-days'), hEl = el.querySelector('.cd-hours'), mEl = el.querySelector('.cd-mins'), sEl = el.querySelector('.cd-secs');
+    function tick(){
+      let diff = Math.max(0, target - Date.now());
+      const days = Math.floor(diff / 86400000); diff -= days * 86400000;
+      const hours = Math.floor(diff / 3600000); diff -= hours * 3600000;
+      const mins = Math.floor(diff / 60000); diff -= mins * 60000;
+      const secs = Math.floor(diff / 1000);
+      if(dEl) dEl.textContent = String(days).padStart(2,'0');
+      if(hEl) hEl.textContent = String(hours).padStart(2,'0');
+      if(mEl) mEl.textContent = String(mins).padStart(2,'0');
+      if(sEl) sEl.textContent = String(secs).padStart(2,'0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  }
+  document.querySelectorAll('[data-countdown]').forEach(initCountdown);
+</script>
+
+</body>
+</html>
