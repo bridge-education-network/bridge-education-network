@@ -12,8 +12,63 @@
 <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<style>
+  header#siteHeader nav{ position:relative; }
+  .lang-switch{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    padding:4px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background:#ffffff;
+    border:1px solid rgba(17,27,48,0.08);
+    border-radius:999px;
+    font-family:'Inter',sans-serif;
+    box-shadow:0 6px 20px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.10);
+  }
+  header#siteHeader.scrolled .lang-switch{
+    background:#ffffff;
+    border-color:rgba(17,27,48,0.10);
+    box-shadow:0 4px 14px rgba(17,27,48,0.14), 0 1px 4px rgba(17,27,48,0.08);
+  }
+  .lang-switch .lang-opt{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:40px;
+    padding:7px 14px;
+    font-size:12.5px;
+    font-weight:700;
+    font-family:'Noto Sans Ethiopic','Inter',sans-serif;
+    letter-spacing:.02em;
+    text-decoration:none;
+    border-radius:999px;
+    color:var(--navy, #16233f);
+    opacity:.7;
+    transition:opacity .2s ease, background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+  }
+  .lang-switch .lang-opt:hover{
+    opacity:1;
+    transform:translateY(-1px);
+    background:rgba(22,35,63,0.08);
+  }
+  .lang-switch .lang-opt.is-active{
+    opacity:1;
+    color:#fff;
+    background:var(--navy, #16233f);
+    box-shadow:0 3px 10px rgba(22,35,63,0.45);
+  }
+  .lang-switch .lang-opt.is-active:hover{ background:var(--navy, #16233f); }
+  @media (max-width:860px){
+    .lang-switch{ position:static; transform:none; margin-left:auto; order:2; }
+    .lang-switch .lang-opt{ padding:6px 11px; font-size:11.5px; min-width:34px; }
+  }
+</style>
 </head>
 <body>
 
@@ -28,6 +83,10 @@
         <small>Education Network</small>
       </div>
     </a>
+    <div class="lang-switch" role="group" aria-label="Language switch / ቋንቋ ይቀይሩ">
+      <a href="team.html" class="lang-opt is-active">EN</a>
+      <a href="team-am.html" class="lang-opt">አማ</a>
+    </div>
     <div class="nav-links" id="navLinks">
       <a href="index.html" onclick="closeMenu()">Home</a>
       <a href="about.html" onclick="closeMenu()">About</a>
@@ -366,8 +425,9 @@
           <div class="instructor-block">
             <h6>Availability</h6>
             <div class="badge-row">
-           
-                  <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Home-to-Home Private (VIP)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Online Group Classes</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Online Private (VIP)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Home-to-Home Private (VIP)</span>
             </div>
           </div>
         </div>
@@ -505,7 +565,43 @@
           </div>
         </div>
       </div>
-  
+      <div class="instructor-card">
+        <div class="instructor-photo"><img src="assets/yosef.jpg" alt="D/n Yosef Eliku"></div>
+        <div class="instructor-body">
+          <h4>D/n Yosef Eliku</h4>
+          <div class="instructor-block">
+            <h6>Subjects</h6>
+            <div class="badge-row">
+              <span class="badge">Bible Study</span>
+              <span class="badge">Church Dogma</span>
+              <span class="badge">Church History</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>Based At</h6>
+            <div class="badge-row">
+              <span class="badge">Debre Gelila Saint Amanuel Cathedral</span>
+            </div>
+            <p style="margin-top:8px;font-size:13px;opacity:.7;">Qualification documentation can be provided upon request.</p>
+          </div>
+          <div class="instructor-block">
+            <h6>Levels</h6>
+            <div class="badge-row">
+              <span class="badge">Beginner</span>
+              <span class="badge">Intermediate</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>Availability</h6>
+            <div class="badge-row">
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Online Group Classes</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Online Private (VIP)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Home-to-Home Private (VIP)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Schools and Organizations</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="instructor-card">
         <div class="instructor-photo"><img src="assets/bemnet.jpg" alt="D/n Bemnet Fissha"></div>
         <div class="instructor-body">
@@ -568,6 +664,7 @@
               <span class="badge">Beginner</span>
               <span class="badge">Intermediate</span>
             </div>
+            <p style="margin-top:8px;font-size:13px;opacity:.7;">Specializes in Beginner and Intermediate levels for kids only.</p>
           </div>
           <div class="instructor-block">
             <h6>Availability</h6>
