@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ቡድናችን — የብሪጅ ትምህርት ኔትወርክ</title>
+<meta name="description" content="የብሪጅ ኤጁኬሽን ኔትወርክ አመራር፣ የፕሮግራም ድጋፍ ቡድን እና አስተማሪዎችን ያግኙ።">
+<meta property="og:title" content="ቡድናችን — የብሪጅ ትምህርት ኔትወርክ">
+<meta property="og:image" content="assets/hero-group.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+<link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=Noto+Serif+Ethiopic:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  header#siteHeader nav{ position:relative; }
+  .lang-switch{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    padding:4px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background:#ffffff;
+    border:1px solid rgba(17,27,48,0.08);
+    border-radius:999px;
+    font-family:'Inter',sans-serif;
+    box-shadow:0 6px 20px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.10);
+  }
+  header#siteHeader.scrolled .lang-switch{
+    background:#ffffff;
+    border-color:rgba(17,27,48,0.10);
+    box-shadow:0 4px 14px rgba(17,27,48,0.14), 0 1px 4px rgba(17,27,48,0.08);
+  }
+  .lang-switch .lang-opt{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:40px;
+    padding:7px 14px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.02em;
+    text-decoration:none;
+    border-radius:999px;
+    color:var(--navy, #16233f);
+    opacity:.7;
+    transition:opacity .2s ease, background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+  }
+  .lang-switch .lang-opt:hover{
+    opacity:1;
+    transform:translateY(-1px);
+    background:rgba(22,35,63,0.08);
+  }
+  .lang-switch .lang-opt.is-active{
+    opacity:1;
+    color:#fff;
+    background:var(--navy, #16233f);
+    box-shadow:0 3px 10px rgba(22,35,63,0.45);
+  }
+  .lang-switch .lang-opt.is-active:hover{ background:var(--navy, #16233f); }
+  @media (max-width:860px){
+    .lang-switch{ position:static; transform:none; margin-left:auto; order:2; }
+    .lang-switch .lang-opt{ padding:6px 11px; font-size:11.5px; min-width:34px; }
+  }
+  body{ font-family:'Noto Sans Ethiopic', var(--sans, 'Inter'), sans-serif; }
+  h1,h2,h3,h4,.brand span,.eyebrow{ font-family:'Noto Serif Ethiopic', var(--serif, 'Source Serif 4'), serif; }
+</style>
+</head>
+<body>
+
+<div id="bridge-progress"><div id="bridge-progress-fill"></div></div>
+
+<header id="siteHeader" class="scrolled">
+  <nav>
+    <a href="index.html#home" class="brand">
+      <img src="assets/logo.jpg" alt="Bridge Education Network logo" onerror="this.style.display='none'">
+      <div>
+        <span>Bridge</span>
+        <small>Education Network</small>
+      </div>
+    </a>
+    <div class="lang-switch" role="group" aria-label="ቋንቋ ይቀይሩ / Language switch">
+      <a href="team.html" class="lang-opt">EN</a>
+      <a href="team-am.html" class="lang-opt is-active">አማ</a>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index-am.html" onclick="closeMenu()">መነሻ</a>
+      <a href="about-am.html" onclick="closeMenu()">ስለ</a>
+      <a href="programs-am.html" onclick="closeMenu()">ፕሮግራሞች</a>
+      <a href="gallery-am.html" onclick="closeMenu()">ጋለሪ</a>
+      <a href="team-am.html" onclick="closeMenu()">ቡድን</a>
+      <a href="contact-am.html" onclick="closeMenu()">እኛን ያግኙ</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="ምናሌ ክፈት">☰</button>
+  </nav>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero compact">
+  <div class="wrap">
+    <a href="index-am.html" class="page-breadcrumb">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      ወደ መነሻ ተመለስ
+    </a>
+    <div class="eyebrow">የኛ ሰዎች</div>
+    <h1>ብሪጅ የሚገነቡ ሰዎች</h1>
+    <p>አመራር፣ የፕሮግራም አስተዳደር እና አስተማሪዎች ትምህርት ለሁሉም ሰው ተደራሽ ለማድረግ አብረው ይሰራሉ።</p>
+  </div>
+</section>
+
+<!-- LEADERSHIP TEAM -->
+<section class="section">
+  <div class="wrap">
+    <div class="team-section-head reveal">
+      <div class="eyebrow dark">የአመራር ቡድን</div>
+      <h2>የአመራር ቡድን</h2>
+      <p>የብሪጅ ትምህርት ኔትወርክን የሚመሩ እና በመላው ኢትዮጵያ የትምህርት እድሎችን የሚያሰፉ ሰዎችን ያግኙ።</p>
+    </div>
+    <div class="team-page-grid">
+      <div class="team-card reveal">
+        <div class="team-photo"><img src="assets/founder.JPG" alt="Abenezer Admasu Tinsae"></div>
+        <div class="team-meta">
+          <h3>አቤኔዘር አድማሱ ትንሳኤ</h3>
+          <div class="role">መስራች እና ፕሬዝዳንት</div>
+          <p class="bio">የብሪጅ ኤጁኬሽን ኔትወርክ መስራች፣ የድርጅቱን ራዕይ፣ የትምህርት ፕሮግራሞችን፣ ሽርክናዎችን፣ ዲጂታል ልማትን እና የረጅም ጊዜ እድገትን የሚመራ።</p>
+          <a class="team-email" href="mailto:abenezerad21@gmail.com">abenezerad21@gmail.com</a>
+          <div class="team-btn-row">
+            <a href="programs-am.html" class="team-btn primary">ፕሮግራሞችን ይመልከቱ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+
+          </div>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo"><img src="assets/tseganesh.JPG" alt="Tseganesh Admasu"></div>
+        <div class="team-meta">
+          <h3>ፀጋነሽ አድማሱ</h3>
+          <div class="role">ዋና ሥራ አስኪያጅ</div>
+          <p class="bio">የዕለት ተዕለት የድርጅት ሥራዎችን በበላይነት ትቆጣጠራለች፣ የፕሮግራም ጥራትን ትደግፋለች፣ አስተማሪዎችን እና የቡድን አባላትን ታስተባብራለች፣ መዝገቦችን እና የአሠራር ፍሰቶችን በማስተዳደር ትረዳለች፣ እና መስራቹን ስለ እቅድ፣ አደረጃጀት እና ዘላቂ እድገት ታማክራለች።</p>
+          <a class="team-email" href="mailto:Tsegaad25@gmail.com">Tsegaad25@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM SUPPORT TEAM -->
+<section class="section section-parchment pm-section">
+  <div class="wrap">
+    <div class="team-section-head reveal">
+      <div class="eyebrow dark">የፕሮግራም ድጋፍ</div>
+      <h2>የፕሮግራም ድጋፍ ቡድን</h2>
+      <p>ተማሪዎችንና አስተማሪዎችን ከጀርባ የሚደግፍ</p>
+    </div>
+
+    <div class="pm-grid reveal-stagger" style="max-width:1200px;margin:0 auto;">
+
+      <div class="pm-card">
+        <div class="pm-photo">
+          <img src="assets/heran.jpg" alt="Heran Alemneh">
+        </div>
+        <div class="pm-meta">
+          <h4>ሄራን አለምነህ</h4>
+          <div class="pm-role">የፕሮግራም ድጋፍ</div>
+          <p class="pm-desc">የተማሪዎችን ምዝገባ፣ የክፍል መርሃ ግብር ማስያዝ፣ ከተማሪዎች እና ከአስተማሪዎች ጋር መገናኘት፣ የመገኘት ክትትል እና አጠቃላይ የፕሮግራም ቅንጅትን ትደግፋለች።</p>
+          <a class="pm-email" href="mailto:heranalemneh27@gmail.com">heranalemneh27@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="pm-card">
+        <div class="pm-photo">
+          <img src="assets/vp.jpg" alt="Ruth Zebene">
+        </div>
+        <div class="pm-meta">
+          <h4>ሩት ዘበነ</h4>
+          <div class="pm-role">የፕሮግራም ድጋፍ</div>
+          <p class="pm-desc">የተማሪዎችን ምዝገባ፣ የክፍል መርሃ ግብር ማስያዝ፣ ከተማሪዎች እና ከአስተማሪዎች ጋር መገናኘት፣ የመገኘት ክትትል እና አጠቃላይ የፕሮግራም ቅንጅትን ትደግፋለች።</p>
+          <a class="pm-email" href="mailto:ruthzebene311s@gmail.com">ruthzebene311s@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="pm-card">
+        <div class="pm-photo">
+          <img src="assets/mariyamawit.jpg" alt="Mariyamawit Wubshet">
+        </div>
+        <div class="pm-meta">
+          <h4>ማሪያማዊት ውብሸት</h4>
+          <div class="pm-role">የፕሮግራም ድጋፍ ሰልጣኝ</div>
+          <p class="pm-desc">የተማሪዎችን ምዝገባ፣ የክፍል መርሃ ግብር ማስያዝ፣ ከተማሪዎች እና ከአስተማሪዎች ጋር መገናኘት፣ የመገኘት ክትትል እና አጠቃላይ የፕሮግራም ቅንጅትን ትደግፋለች።</p>
+          <a class="pm-email" href="mailto:MariyamawitWubshet@gmail.com">MariyamawitWubshet@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="pm-card">
+        <div class="pm-photo">
+          <img src="assets/alem.jpg" alt="Alem Tefera">
+        </div>
+        <div class="pm-meta">
+          <h4>አለም ተፈራ</h4>
+          <div class="pm-role">የፕሮግራም ድጋፍ ሰልጣኝ</div>
+          <p class="pm-desc">የተማሪ ድጋፍ፣ የአስተማሪ ግንኙነት፣ የጊዜ ሰሌዳ ማውጣት፣ ማስታወቂያዎች እና የብሪጅ የትምህርት ፕሮግራሞችን የዕለት ተዕለት ቅንጅት በማቀናጀት ትረዳለች።</p>
+          <a class="pm-email" href="mailto:teferatilahun70@gmail.com">teferatilahun70@gmail.com</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MEET OUR INSTRUCTORS -->
+<section class="section" style="padding-bottom:0;">
+  <div class="wrap">
+    <div class="team-section-head reveal instructors-intro">
+      <div class="eyebrow dark">አስተማሪዎች</div>
+      <h2>ከአስተማሪዎቻችን ጋር ይተዋወቁ</h2>
+      <p>እያንዳንዱ ተማሪ ስኬታማ እንዲሆን ለመርዳት ከተዘጋጁ ልምድ ካላቸው አስተማሪዎች ይማሩ።</p>
+    </div>
+  </div>
+</section>
+
+<!-- SIGN LANGUAGE INSTRUCTORS -->
+<section class="instructor-group" id="sign-language">
+  <div class="wrap">
+    <div class="instructor-group-head reveal">
+      <div>
+        <h3>የብሪጅ ምልክት ቋንቋ ክፍል</h3>
+        <div class="tagline">ከጀማሪ እስከ ከፍተኛ ደረጃ ድረስ የኢትዮጵያ ምልክት ቋንቋ ስልጠና።</div>
+      </div>
+      <div class="instructor-group-actions">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBMdZhzI4ta-ZP2H80Q1u85T6SxXSP2tIdPjwNam-0gN0Urw/viewform?usp=header" target="_blank" rel="noopener" class="team-btn primary">አሁኑኑ ይመዝገቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="programs-am.html#sign-language" class="team-btn outline">የፕሮግራም ዝርዝሮችን ይመልከቱ</a>
+      </div>
+    </div>
+    <div class="instructor-grid reveal-stagger">
+      <div class="instructor-card">
+        <div class="instructor-photo"><img src="assets/founder.JPG" alt="Abenezer Admasu"></div>
+        <div class="instructor-body">
+          <h4>አቤኔዘር አድማሱ</h4>
+          <div class="instructor-role">መሪ የኢትዮጵያ የምልክት ቋንቋ መምህር</div>
+          <div class="instructor-block">
+            <h6>ልምድ</h6>
+            <ul>
+              <li>የብሪጅ ምልክት ቋንቋ ክለብ መስራች</li>
+              <li>ከ100 በላይ ተማሪዎችን በተሳካ ሁኔታ አስተምሯል</li>
+              <li>ከ3 ዓመት በላይ የኢትዮጵያ የምልክት ቋንቋ ማስተማር</li>
+              <li>መስማት የተሳናቸው የማህበረሰብ ተሳትፎ ተነሳሽነቶች ውስጥ ንቁ ተሳታፊ</li>
+            </ul>
+          </div>
+          <div class="instructor-block">
+            <h6>የሚያተኩርበት</h6>
+            <div class="badge-row">
+              <span class="badge">ጀማሪ</span>
+              <span class="badge">መካከለኛ</span>
+              
+              <span class="badge">የመግባባት ክህሎቶች</span>
+              <span class="badge">የትርጉም መሠረታዊ ነገሮች</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>ተገኝነት</h6>
+            <div class="badge-row">
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የቡድን ክፍሎች</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የግል (ቪአይፒ)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ከቤት ወደ ቤት የግል (ቪአይፒ)</span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="instructor-card">
+        <div class="instructor-photo"><img src="assets/hilina.jpg" alt="Hilina Tilahun"></div>
+        <div class="instructor-body">
+          <h4>ህሊና ጥላሁን</h4>
+          <div class="instructor-role">የኢትዮጵያ የምልክት ቋንቋ አስተማሪ</div>
+          <div class="instructor-block">
+            <h6>ልምድ</h6>
+            <ul>
+              <li>መስማት የተሳናቸው የማህበረሰብ ተሳትፎ ተነሳሽነቶች ውስጥ ንቁ ተሳታፊ</li>
+            </ul>
+          </div>
+          <div class="instructor-block">
+            <h6>የሚያተኩርበት</h6>
+            <div class="badge-row">
+              <span class="badge">ጀማሪ</span>
+              <span class="badge">መካከለኛ</span>
+              <span class="badge">የመግባባት ክህሎቶች</span>
+              <span class="badge">የትርጉም መሠረታዊ ነገሮች</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>ተገኝነት</h6>
+            <div class="badge-row">
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ከቤት ወደ ቤት የግል (ቪአይፒ)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="instructor-card">
+        <div class="instructor-photo"><img src="assets/abrham.jpg" alt="Abrham Girma"></div>
+        <div class="instructor-body">
+          <h4>አብርሃም ግርማ</h4>
+          <div class="instructor-role">የኢትዮጵያ የምልክት ቋንቋ አስተማሪ</div>
+          <div class="instructor-block">
+            <h6>ልምድ</h6>
+            <ul>
+              <li>መስማት የተሳናቸው የማህበረሰብ ተሳትፎ ተነሳሽነቶች ውስጥ ንቁ ተሳታፊ</li>
+            </ul>
+          </div>
+          <div class="instructor-block">
+            <h6>የሚያተኩርበት</h6>
+            <div class="badge-row">
+              <span class="badge">ጀማሪ</span>
+              <span class="badge">መካከለኛ</span>
+              <span class="badge">የመግባባት ክህሎቶች</span>
+              <span class="badge">የትርጉም መሠረታዊ ነገሮች</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>ተገኝነት</h6>
+            <div class="badge-row">
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ከቤት ወደ ቤት የግል (ቪአይፒ)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABENET INSTRUCTORS -->
+<section class="instructor-group alt" id="abenet">
+  <div class="wrap">
+    <div class="instructor-group-head reveal">
+      <div>
+        <h3>የብሪጅ አብነት ክፍል</h3>
+        <div class="tagline">ባህላዊ የኢትዮጵያ ኦርቶዶክስ ንባብ እና የአምልኮ ትምህርት።</div>
+      </div>
+      <div class="instructor-group-actions">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRFP4_DPlgIYdW7Im9rH8StcokRG9dnCrF0ShHrsq0tqv5aA/viewform?usp=header" target="_blank" rel="noopener" class="team-btn primary">አሁኑኑ ይመዝገቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="programs-am.html#abenet" class="team-btn outline">የፕሮግራም ዝርዝሮችን ይመልከቱ</a>
+      </div>
+    </div>
+    <div class="instructor-grid cols-3 reveal-stagger">
+      <div class="instructor-card">
+        <div class="instructor-photo"><img src="assets/founder.JPG" alt="Abenezer Admasu"></div>
+        <div class="instructor-body">
+          <h4>አቤኔዘር አድማሱ</h4>
+          <div class="instructor-block">
+            <h6>የንባብ ክፍል</h6>
+            <div class="badge-row">
+              <span class="badge">ውዳሴ ማርያም</span>
+              <span class="badge">መልክአ ማርያም</span>
+              <span class="badge">መልክአ ኢየሱስ</span>
+              <span class="badge">መዝሙረ ዳዊት</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>ተገኝነት</h6>
+            <div class="badge-row">
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የቡድን ክፍሎች</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የግል (ቪአይፒ)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ከቤት ወደ ቤት የግል (ቪአይፒ)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="instructor-card">
+        <div class="instructor-photo"><img src="assets/yordanos.JPG" alt="D/n Yordanos Ketema"></div>
+        <div class="instructor-body">
+          <h4>ዲ/ን ዮርዳኖስ ከተማ</h4>
+         
+          <div class="instructor-block">
+            <h6>የንባብ ክፍል</h6>
+            <div class="badge-row">
+              <span class="badge">ውዳሴ ማርያም</span>
+              <span class="badge">መልክአ ማርያም</span>
+              <span class="badge">መልክአ ኢየሱስ</span>
+              <span class="badge">መዝሙረ ዳዊት</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>የዜማ ክፍል</h6>
+            <div class="badge-row">
+              <span class="badge">ግብረ ዲቁና (ቅዳሴ) </span>
+             
+              <span class="badge">ለምእመናን ተሰጥኦ (ቅዳሴ) </span>
+              <span class="badge">ሰዓታት (ሙሉ) </span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>ተገኝነት</h6>
+            <div class="badge-row">
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የቡድን ክፍሎች</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የግል (ቪአይፒ)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ከቤት ወደ ቤት የግል (ቪአይፒ)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="instructor-card">
+        <div class="instructor-photo"><img src="assets/tsega.jpg" alt="Tsega Yohannes"></div>
+        <div class="instructor-body">
+          <h4>ፀጋ ዮሐንስ</h4>
+          <div class="instructor-block">
+            <h6>የንባብ ክፍል</h6>
+            <div class="badge-row">
+              <span class="badge">ውዳሴ ማርያም</span>
+              <span class="badge">መልክአ ማርያም</span>
+              <span class="badge">መልክአ ኢየሱስ</span>
+              <span class="badge">መዝሙረ ዳዊት</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>የዜማ ክፍል</h6>
+            <div class="badge-row">
+              <span class="badge">ውዳሴ ማርያም, መስተጋብእ</span>
+              <span class="badge">ሰዓታት (ሙሉ)</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>ተገኝነት</h6>
+            <div class="badge-row">
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የቡድን ክፍሎች</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የግል (ቪአይፒ)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ከቤት ወደ ቤት የግል (ቪአይፒ)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ART CLASS INSTRUCTORS -->
+<section class="instructor-group" id="art-school">
+  <div class="wrap">
+    <div class="instructor-group-head reveal">
+      <div>
+        <h3>የብሪጅ አርት ክፍል</h3>
+        <div class="tagline">የእርሳስ ስዕል፣ ቀለም ቅብ እና የኦርቶዶክስ ቅዱሳት ስዕላት ለሁሉም የክህሎት ደረጃዎች።</div>
+      </div>
+      <div class="instructor-group-actions">
+        <a href="contact-am.html" class="team-btn primary">አሁኑኑ ይመዝገቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="programs-am.html#art-school" class="team-btn outline">የፕሮግራም ዝርዝሮችን ይመልከቱ</a>
+      </div>
+    </div>
+    <div class="instructor-grid reveal-stagger">
+      <div class="instructor-card">
+        <div class="instructor-photo"><img src="assets/founder.JPG" alt="Abenezer Admasu"></div>
+        <div class="instructor-body">
+          <h4>አቤኔዘር አድማሱ</h4>
+          <div class="instructor-block">
+            <h6>ርዕሰ ጉዳዮች</h6>
+            <div class="badge-row">
+              <span class="badge">የእርሳስ ስዕል</span>
+              <span class="badge">የኦርቶዶክስ ቅዱሳት ስዕላት</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>ደረጃዎች</h6>
+            <div class="badge-row">
+              <span class="badge">ጀማሪ</span>
+              <span class="badge">መካከለኛ</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>ተገኝነት</h6>
+            <div class="badge-row">
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የቡድን ክፍሎች</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የግል (ቪአይፒ)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ከቤት ወደ ቤት የግል (ቪአይፒ)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ትምህርት ቤቶች እና ድርጅቶች</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="instructor-card">
+        <div class="instructor-photo"><img src="assets/tamrat.JPG" alt="D/n Tamrat Husen"></div>
+        <div class="instructor-body">
+          <h4>ዲ/ን ታምራት ሁሴን</h4>
+          <div class="instructor-block">
+            <h6>ርዕሰ ጉዳዮች</h6>
+            <div class="badge-row">
+              <span class="badge">የእርሳስ ስዕል</span>
+              <span class="badge">የውሃ ቀለም</span>
+              <span class="badge">የዘይት እና የአክሬሊክ ቀለም</span>
+              <span class="badge">የኦርቶዶክስ ቅዱሳት ስዕላት</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>ደረጃዎች</h6>
+            <div class="badge-row">
+              <span class="badge">ጀማሪ</span>
+              <span class="badge">መካከለኛ</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>ተገኝነት</h6>
+            <div class="badge-row">
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የቡድን ክፍሎች</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የግል (ቪአይፒ)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ከቤት ወደ ቤት የግል (ቪአይፒ)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ትምህርት ቤቶች እና ድርጅቶች</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THEOLOGY CLASS INSTRUCTORS -->
+<section class="instructor-group alt" id="theology">
+  <div class="wrap">
+    <div class="instructor-group-head reveal">
+      <div>
+        <h3>የብሪጅ ኦርቶዶክስ ነገረ ሃይማኖት ክፍል</h3>
+        <div class="tagline">የመጽሐፍ ቅዱስ ጥናትን፣ የቤተክርስቲያን ዶግማ እና የቤተክርስቲያን ታሪክን የሚሸፍኑ ሦስት የጥናት ዘርፎች።</div>
+      </div>
+      <div class="instructor-group-actions">
+        <a href="contact-am.html" class="team-btn primary">አሁኑኑ ይመዝገቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="programs-am.html#theology" class="team-btn outline">የፕሮግራም ዝርዝሮችን ይመልከቱ</a>
+      </div>
+    </div>
+    <div class="instructor-grid reveal-stagger">
+      <div class="instructor-card">
+        <div class="instructor-photo"><img src="assets/founder.JPG" alt="Abenezer Admasu"></div>
+        <div class="instructor-body">
+          <h4>አቤኔዘር አድማሱ</h4>
+          <div class="instructor-block">
+            <h6>ርዕሰ ጉዳዮች</h6>
+            <div class="badge-row">
+              <span class="badge">የመጽሐፍ ቅዱስ ጥናት</span>
+              <span class="badge">የቤተክርስቲያን ዶግማ</span>
+              <span class="badge">የቤተክርስቲያን ታሪክ</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>የሚገኘው</h6>
+            <div class="badge-row">
+              <span class="badge">በደብረ ገሊላ ቅዱስ አማኑኤል ካቴድራል</span>
+            </div>
+            <p style="margin-top:8px;font-size:13px;opacity:.7;">የብቃት ማረጋገጫ ሰነዶች ሲጠየቁ ሊቀርቡ ይችላሉ።</p>
+          </div>
+          <div class="instructor-block">
+            <h6>ደረጃዎች</h6>
+            <div class="badge-row">
+              <span class="badge">ጀማሪ</span>
+              <span class="badge">መካከለኛ</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>ተገኝነት</h6>
+            <div class="badge-row">
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የቡድን ክፍሎች</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የግል (ቪአይፒ)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ከቤት ወደ ቤት የግል (ቪአይፒ)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ትምህርት ቤቶች እና ድርጅቶች</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="instructor-card">
+        <div class="instructor-photo"><img src="assets/bemnet.jpg" alt="D/n Bemnet Fissha"></div>
+        <div class="instructor-body">
+          <h4>ዲ/ን በእምነት ፍስሃ</h4>
+          <div class="instructor-block">
+            <h6>ርዕሰ ጉዳዮች</h6>
+            <div class="badge-row">
+              <span class="badge">የመጽሐፍ ቅዱስ ጥናት</span>
+              <span class="badge">የቤተክርስቲያን ዶግማ</span>
+              <span class="badge">የቤተክርስቲያን ታሪክ</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>የሚገኘው</h6>
+            <div class="badge-row">
+              <span class="badge">በደብረ ገሊላ ቅዱስ አማኑኤል ካቴድራል</span>
+            </div>
+            <p style="margin-top:8px;font-size:13px;opacity:.7;">የብቃት ማረጋገጫ ሰነዶች ሲጠየቁ ሊቀርቡ ይችላሉ።</p>
+          </div>
+          <div class="instructor-block">
+            <h6>ደረጃዎች</h6>
+            <div class="badge-row">
+              <span class="badge">ጀማሪ</span>
+              <span class="badge">መካከለኛ</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>ተገኝነት</h6>
+            <div class="badge-row">
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የቡድን ክፍሎች</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የግል (ቪአይፒ)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ከቤት ወደ ቤት የግል (ቪአይፒ)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ትምህርት ቤቶች እና ድርጅቶች</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="instructor-card">
+        <div class="instructor-photo"><img src="assets/heran.jpg" alt="Heran Alemneh"></div>
+        <div class="instructor-body">
+          <h4>ሄራን አለምነህ</h4>
+          <div class="instructor-block">
+            <h6>ርዕሰ ጉዳዮች</h6>
+            <div class="badge-row">
+              <span class="badge">የመጽሐፍ ቅዱስ ጥናት</span>
+              <span class="badge">የቤተክርስቲያን ዶግማ</span>
+              <span class="badge">የቤተክርስቲያን ታሪክ</span>
+            </div>
+          </div>
+          <div class="instructor-block">
+            <h6>የምትገኘው</h6>
+            <div class="badge-row">
+              <span class="badge">በምስራቀ ፀሃይ ቀበና መድሃኔአለም ካቴድራል</span>
+            </div>
+            <p style="margin-top:8px;font-size:13px;opacity:.7;">የብቃት ማረጋገጫ ሰነዶች ሲጠየቁ ሊቀርቡ ይችላሉ።</p>
+          </div>
+          <div class="instructor-block">
+            <h6>ደረጃዎች</h6>
+            <div class="badge-row">
+              <span class="badge">ጀማሪ</span>
+              <span class="badge">መካከለኛ</span>
+            </div>
+            <p style="margin-top:8px;font-size:13px;opacity:.7;">ጀማሪ እና መካከለኛ ደረጃዎችን ለልጆች ብቻ ታስተምራለች።</p>
+          </div>
+          <div class="instructor-block">
+            <h6>ተገኝነት</h6>
+            <div class="badge-row">
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የቡድን ክፍሎች</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>የመስመር ላይ የግል (ቪአይፒ)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ከቤት ወደ ቤት የግል (ቪአይፒ)</span>
+              <span class="avail-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ትምህርት ቤቶች እና ድርጅቶች</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:56px;">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>ከብሪጅ ጋር ማስተማር ይፈልጋሉ?</h2>
+      <p>የብሪጅ ኤጁኬሽን ኔትወርክን እንደ አስተማሪ፣ አስተማሪ/አሰልጣኝ ወይም የፕሮግራም አበርካች ይቀላቀሉ።</p>
+      <div class="cta-actions">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeexJtd1vPkFX62bIq1WUxkhwI988SC7ESayJjT0i0_mYStSA/viewform?usp=header" target="_blank" rel="noopener" class="btn btn-primary">ቡድናችንን ለመቀላቀል ያመልክቱ</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScnXI7FhmiaOCxs4dlCKsOkVjYGXLHRwp_Mey73QpiS1-8Lzw/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn btn-outline">በጎ ፈቃደኛ ለመሆን ያመልክቱ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.jpg" alt="Bridge logo" onerror="this.style.display='none'">
+          <span>Bridge Education Network</span>
+        </div>
+        <p>በጋራ፣ እድሎችን የሚፈጥሩ፣ ማህበረሰቦችን የሚያጠናክሩ እና ዘላቂ ለውጥን የሚያነቃቁ ድልድዮችን እየገነባን ነው።</p>
+      </div>
+      <div class="footer-col">
+        <h5>ዳስስ</h5>
+        <a href="index-am.html">መነሻ</a>
+        <a href="about-am.html">ስለ</a>
+        <a href="programs-am.html">ፕሮግራሞች</a>
+        <a href="gallery-am.html">ጋለሪ</a>
+        <a href="team-am.html">ቡድን</a>
+        <a href="contact-am.html">እኛን ያግኙ</a>
+      </div>
+      <div class="footer-col">
+        <h5>እኛን ያግኙ</h5>
+          <a href="tel:+251947319715">0947 319 715</a>
+        <a href="tel:+519940115655">0940 115 655</a>
+        <a href="tel:+251903283921">0903 283 921</a>
+        <a href="mailto:bridgeedunetwork@gmail.com">bridgeedunetwork@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Bridge Education Network. መብቱ በህግ የተጠበቀ ነው።</span>
+      <div class="footer-social">
+        <a href="mailto:bridgeedunetwork@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M3 6l9 7 9-7"/></svg></a>
+        <a href="https://www.linkedin.com/in/bridge-education-network-707793424/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="9" width="20" height="12" rx="2"/><path d="M16 3H8a2 2 0 00-2 2v4h12V5a2 2 0 00-2-2z"/></svg></a>
+        <a href="https://www.instagram.com/bridge_education_network/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://wa.me/251947319715" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  const progressFill = document.getElementById('bridge-progress-fill');
+  window.addEventListener('scroll', () => {
+    if(!header) return;
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    const h = document.documentElement;
+    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    if(progressFill) progressFill.style.width = pct + '%';
+  });
+
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  const navOverlay = document.getElementById('navOverlay');
+  function closeMenu(){
+    if(navLinks) navLinks.classList.remove('open');
+    if(navOverlay) navOverlay.classList.remove('open');
+    if(menuBtn){
+      menuBtn.textContent = '☰';
+      menuBtn.setAttribute('aria-label', 'ምናሌ ክፈት');
+    }
+  }
+  if(menuBtn && navLinks && navOverlay){
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navOverlay.classList.toggle('open', isOpen);
+      menuBtn.textContent = isOpen ? '✕' : '☰';
+      menuBtn.setAttribute('aria-label', isOpen ? 'ምናሌ ዝጋ' : 'ምናሌ ክፈት');
+    });
+    navOverlay.addEventListener('click', closeMenu);
+  }
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
+
+  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in-view'); } });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
