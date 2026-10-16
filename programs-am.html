@@ -70,6 +70,20 @@
   }
   body{ font-family:'Noto Sans Ethiopic', var(--sans, 'Inter'), sans-serif; }
   h1,h2,h3,h4,.brand span,.eyebrow,.fee-card-label{ font-family:'Noto Serif Ethiopic', var(--serif, 'Source Serif 4'), serif; }
+  .contact-banner{
+    max-width:820px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .contact-banner .fee-notice{
+    max-width:100%;
+    margin:0 auto;
+    text-align:left;
+  }
+  .contact-banner-actions{
+    margin-top:18px;
+  }
+  .fee-card-note strong{ color:var(--navy,#16233f); }
 </style>
 </head>
 <body>
@@ -137,9 +151,8 @@
         <div class="enroll-step-num">3</div>
         <h4>የመማሪያ ዘዴዎን ይምረጡ</h4>
         <ul>
-          <li>የመስመር ላይ የቡድን ክፍሎች</li>
-          <li>የመስመር ላይ የግል (ቪአይፒ)</li>
-          <li>ከቤት ወደ ቤት የግል (ቪአይፒ)</li>
+          <li>የመስመር ላይ ክፍሎች</li>
+          <li>ከቤት ወደ ቤት ክፍሎች</li>
         </ul>
       </div>
       <div class="enroll-step">
@@ -193,6 +206,24 @@
   </div>
 </section>
 
+<!-- FLEXIBLE SCHEDULING / CONTACT BANNER -->
+<section class="enroll-section section-parchment">
+  <div class="wrap">
+    <div class="contact-banner reveal">
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>ተለዋዋጭ መርሃ ግብር — ቋሚ የቡድን መጀመሪያ ቀናት የሉም</h6>
+          <p>ሁሉም ፕሮግራሞቻችን በራስዎ ፍጥነት የሚማሩ ናቸው። ለመጠበቅ ቋሚ ቡድን የለም — ከተመዘገቡ በኋላ፣ ከአስተማሪዎ ጋር በቀጥታ መርሃ ግብር ያዘጋጃሉ፣ እና እንደ አስተማሪ አቅርቦት ፈጣን ወይም ቀስ በቀስ ኮርሱን መጨረስ ይችላሉ።</p>
+        </div>
+      </div>
+      <div class="contact-banner-actions">
+        <a href="contact-am.html" class="btn btn-primary">ቡድናችንን ያግኙ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROGRAM NAV CARDS -->
 <div class="program-nav-wrap">
   <div class="program-nav-cards" id="pnavCards">
@@ -226,70 +257,38 @@
       <div class="detail-status available">አሁን ይገኛል</div>
     </div>
 
-    <div class="cohort-panel reveal">
-      <div class="cohort-panel-head">
-        <div>
-          <span class="cohort-status-pill">ምዝገባዎች ክፍት ናቸው — ቡድን 1</span>
-          <h3 style="margin-top:12px;font-size:19px;color:var(--navy);">የአሁኑ የቡድን መርሃ ግብር</h3>
-        </div>
-        <div class="countdown-row" data-countdown="2026-10-16T00:00:00+03:00">
-          <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">ቀናት</div></div>
-          <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">ሰዓት</div></div>
-          <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">ደቂቃዎች</div></div>
-          <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">ሰከንዶች</div></div>
-        </div>
-      </div>
-      <div class="cohort-alt">📅 <strong>ይህ የቡድን መርሃ ግብር ለመስመር ላይ የቡድን ክፍል ነው።</strong> ከታች የሚታዩት ቆጠራ እና መርሃ ግብር የሚሰሩት ለአሁኑ የመስመር ላይ የቡድን ክፍል ቡድን ብቻ ነው። የቪአይፒ ተማሪዎች በእነዚህ ሰዓቶች ብቻ የተገደቡ አይደሉም — የመስመር ላይ የግል (ቪአይፒ) እና ከቤት ወደ ቤት የግል (ቪአይፒ) ተማሪዎች እንደ አስተማሪዎች አቅርቦት ሁኔታ የመረጡትን ቀናት እና ሰዓት መጠየቅ ይችላሉ።</div>
-      <div class="schedule-grid">
-        <div class="schedule-card">
-          <h5>ጀማሪ — ቡድን 1</h5>
-          <div class="sched-days">አርብ እና ቅዳሜ</div>
-          <div class="sched-time">ከምሽቱ 11:45 – 12:45 ሰዓት</div>
-          <div class="sched-start">ከጥቅምት 6፣ 2018 ጀምሮ</div>
-        </div>
-      </div>
-      <div class="fee-notice" style="margin-top:20px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-        <div>
-          <h6>የቪአይፒ ተማሪዎች በማንኛውም ጊዜ ይጀምራሉ</h6>
-          <p>የመስመር ላይ የግል (ቪአይፒ) እና ከቤት ወደ ቤት የግል (ቪአይፒ) ተማሪዎች የቡድን ቡድን ሳይጠብቁ በማንኛውም ጊዜ መጀመር ይችላሉ፣ እና በራሳቸው ፍጥነት መሻሻል ይችላሉ።</p>
-        </div>
-      </div>
-      <div class="cohort-alt">📅 <strong>ተስማሚ የጊዜ ሰሌዳ አያዩም?</strong> አማራጭ የጊዜ ሰሌዳዎችን፣ የግል ትምህርቶችን ወይም የወደፊት የቡድን ቡድኖችን ለመወያየት እባክዎ <a href="contact-am.html" style="color:var(--navy);font-weight:700;text-decoration:underline;">እኛን ያግኙ</a>።</div>
-    </div>
-
     <div class="fee-panel reveal">
       <div class="fee-panel-head">
         <span class="fee-panel-eyebrow">የፕሮግራም ክፍያዎች</span>
-        <h3>የትምህርት እና የማመልከቻ ክፍያዎች</h3>
+        <h3>የትምህርት እና የምዝገባ ክፍያዎች</h3>
       </div>
       <div class="fee-grid">
         <div class="fee-card fee-card-app">
-          <div class="fee-card-label">የማመልከቻ ክፍያ</div>
-          <div class="fee-card-amount">ETB 90</div>
+          <div class="fee-card-label">የምዝገባ ክፍያ</div>
+          <div class="fee-card-amount">ETB 150</div>
           <div class="fee-card-note">ለሁሉም አመልካቾች ያስፈልጋል።</div>
         </div>
         <div class="fee-card">
-          <div class="fee-card-label">የመስመር ላይ የቡድን ክፍል</div>
-          <div class="fee-card-amount">ETB 249<span>/ ሰዓት</span></div>
-          <div class="fee-card-note">ተማሪዎች ለሚመዘገቡበት ሙሉ ኮርስ/ደረጃ ይከፍላሉ። የኮርሱ ርዝመት፡ ጀማሪ 12 ሰዓት · መካከለኛ 13 ሰዓት · ከፍተኛ 15 ሰዓት።</div>
+          <div class="fee-card-label">ጀማሪ — 12 ሰዓታት</div>
+          <div class="fee-card-amount">ETB 3,000<span>የመስመር ላይ</span></div>
+          <div class="fee-card-note">ከቤት ወደ ቤት፦ <strong>ETB 4,500</strong>። የሙሉ ኮርስ ዋጋ፣ አስቀድሞ ይከፈላል።</div>
         </div>
         <div class="fee-card">
-          <div class="fee-card-label">የመስመር ላይ የግል (ቪአይፒ)</div>
-          <div class="fee-card-amount">ETB 449<span>/ ሰዓት</span></div>
-          <div class="fee-card-note">ተለዋዋጭ የጊዜ ሰሌዳ · የአንድ ለአንድ መመሪያ።</div>
+          <div class="fee-card-label">መካከለኛ — 13 ሰዓታት</div>
+          <div class="fee-card-amount">ETB 3,250<span>የመስመር ላይ</span></div>
+          <div class="fee-card-note">ከቤት ወደ ቤት፦ <strong>ETB 4,875</strong>። የሙሉ ኮርስ ዋጋ፣ አስቀድሞ ይከፈላል።</div>
         </div>
         <div class="fee-card">
-          <div class="fee-card-label">ከቤት ወደ ቤት የግል (ቪአይፒ)</div>
-          <div class="fee-card-amount">ከ ETB 499<span>/ ሰዓት</span></div>
-          <div class="fee-card-note">ተለዋዋጭ የጊዜ ሰሌዳ · የአንድ ለአንድ መመሪያ · የትራንስፖርት ክፍያዎች እንደ ቦታው ሊጨመሩ ይችላሉ።</div>
+          <div class="fee-card-label">ከፍተኛ — 15 ሰዓታት</div>
+          <div class="fee-card-amount">ETB 3,750<span>የመስመር ላይ</span></div>
+          <div class="fee-card-note">ከቤት ወደ ቤት፦ <strong>ETB 5,625</strong>። የሙሉ ኮርስ ዋጋ፣ አስቀድሞ ይከፈላል።</div>
         </div>
       </div>
       <div class="fee-notice">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
         <div>
-          <h6>ከቤት ወደ ቤት የግል</h6>
-          <p>ከቤት ወደ ቤት ለመማር፣ እባክዎን በቀጥታ ያግኙን። ቡድናችን ከማመልከትዎ በፊት ስለ ቦታዎ፣ የጊዜ ሰሌዳዎ፣ የአስተማሪዎች አቅርቦት እና የትምህርት ክፍያዎ ይወያያል።</p>
+          <h6>ተለዋዋጭ ፍጥነት፣ ቋሚ መርሃ ግብር የለም</h6>
+          <p>ለመጠበቅ ቋሚ ቡድን የለም። ከተመዘገቡ በኋላ፣ ከአስተማሪዎ ጋር በቀጥታ ክፍለ ጊዜዎችዎን ያዘጋጃሉ — አንዳንድ ተማሪዎች አንድን ደረጃ በአንድ ሳምንት ውስጥ ይጨርሳሉ፣ ሌሎች ደግሞ እንደ አስተማሪ አቅርቦት ቀስ በቀስ ይወስዳሉ።</p>
         </div>
       </div>
       <div class="fee-notice">
@@ -297,6 +296,13 @@
         <div>
           <h6>የክፍያ ውሎች</h6>
           <p>ተማሪዎች ምዝገባው ከመጠናቀቁ በፊት ሙሉውን ኮርስ አስቀድመው ይከፍላሉ።</p>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>የትኛው አማራጭ እንደሚስማማዎት እርግጠኛ አይደሉም?</h6>
+          <p>ቡድናችን ስለ ዋጋ፣ መርሃ ግብር እና አቅርቦት ለማብራራት ደስተኛ ነው — እባክዎ ያግኙን።</p>
         </div>
       </div>
     </div>
@@ -342,9 +348,8 @@
         <div class="detail-side-block">
           <h4>የመማሪያ ዘዴዎች</h4>
           <ul>
-            <li>የመስመር ላይ የቡድን ክፍሎች</li>
-            <li>የመስመር ላይ የግል (ቪአይፒ)</li>
-            <li>ከቤት ወደ ቤት የግል (ቪአይፒ)</li>
+            <li>የመስመር ላይ ክፍሎች</li>
+            <li>ከቤት ወደ ቤት ክፍሎች</li>
             <li>ትምህርት ቤቶች እና ድርጅቶች</li>
           </ul>
           <div class="methods-note">ከቤተሰብ ወይም ከጓደኞች ጋር መማር ይፈልጋሉ? የግል ትምህርት ይጠይቁ እና ለእርስዎ በሚስማማ መርሃ ግብር በቡድን ሆነው አብረው ይማሩ።</div>
@@ -352,6 +357,7 @@
         <div class="detail-cta-row">
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBMdZhzI4ta-ZP2H80Q1u85T6SxXSP2tIdPjwNam-0gN0Urw/viewform?usp=header" target="_blank" rel="noopener" class="program-enroll">አሁኑኑ ይመዝገቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a href="team-am.html#sign-language" class="team-btn outline">ከአስተማሪዎቻችን ጋር ይተዋወቁ</a>
+          <a href="contact-am.html" class="team-btn outline">እኛን ያግኙ</a>
         </div>
       </div>
     </div>
@@ -369,62 +375,42 @@
       <div class="detail-status available">አሁን ይገኛል</div>
     </div>
 
-    <div class="cohort-panel reveal">
-      <div class="cohort-panel-head">
-        <div>
-          <span class="cohort-status-pill">ምዝገባዎች ክፍት ናቸው</span>
-          <h3 style="margin-top:12px;font-size:19px;color:var(--navy);">የአሁኑ የቡድን መርሃ ግብር</h3>
-        </div>
-        <div class="countdown-row" data-countdown="2026-10-13T00:00:00+03:00">
-          <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">ቀናት</div></div>
-          <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">ሰዓት</div></div>
-          <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">ደቂቃዎች</div></div>
-          <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">ሰከንዶች</div></div>
-        </div>
-      </div>
-      <div class="schedule-grid">
-        <div class="schedule-card">
-          <h5>አብነት — የቡድን ክፍል</h5>
-          <div class="sched-days">ቅዳሜ እና እሁድ</div>
-          <div class="sched-time">ማታ 12:00 – 1:00 ሰዓት</div>
-          <div class="sched-start">ከጥቅምት 3፣ 2018 ጀምሮ</div>
-        </div>
-      </div>
-      <div class="cohort-alt">📅 <strong>ተስማሚ የጊዜ ሰሌዳ አያዩም?</strong> አማራጭ የጊዜ ሰሌዳዎችን፣ የግል ትምህርቶችን ወይም የወደፊት የቡድን ቡድኖችን ለመወያየት እባክዎ <a href="contact-am.html" style="color:var(--navy);font-weight:700;text-decoration:underline;">እኛን ያግኙ</a>።</div>
-    </div>
-
     <div class="fee-panel reveal">
       <div class="fee-panel-head">
         <span class="fee-panel-eyebrow">የፕሮግራም ክፍያዎች</span>
-        <h3>የትምህርት እና የማመልከቻ ክፍያዎች</h3>
+        <h3>የትምህርት እና የምዝገባ ክፍያዎች</h3>
       </div>
       <div class="fee-grid">
         <div class="fee-card fee-card-app">
-          <div class="fee-card-label">የማመልከቻ ክፍያ</div>
-          <div class="fee-card-amount">ETB 90</div>
+          <div class="fee-card-label">የምዝገባ ክፍያ</div>
+          <div class="fee-card-amount">ETB 150</div>
           <div class="fee-card-note">ለሁሉም አመልካቾች ያስፈልጋል።</div>
         </div>
         <div class="fee-card">
-          <div class="fee-card-label">የመስመር ላይ የቡድን ክፍል</div>
-          <div class="fee-card-amount">ETB 199<span>/ ሰዓት</span></div>
-          <div class="fee-card-note">ተማሪዎች ለሚመዘገቡበት ሙሉ ኮርስ/ደረጃ ይከፍላሉ።</div>
+          <div class="fee-card-label">የአብነት ፕሮግራም — በወር (8 ሰዓታት)</div>
+          <div class="fee-card-amount">ETB 2,200<span>የመስመር ላይ</span></div>
+          <div class="fee-card-note">ከቤት ወደ ቤት፦ <strong>ETB 4,400</strong> በወር።</div>
         </div>
-        <div class="fee-card">
-          <div class="fee-card-label">የመስመር ላይ የግል (ቪአይፒ)</div>
-          <div class="fee-card-amount">ETB 449<span>/ ሰዓት</span></div>
-          <div class="fee-card-note">የአንድ ለአንድ መመሪያ።</div>
-        </div>
-        <div class="fee-card">
-          <div class="fee-card-label">ከቤት ወደ ቤት የግል (ቪአይፒ)</div>
-          <div class="fee-card-amount">ከ ETB 499<span>/ ሰዓት</span></div>
-          <div class="fee-card-note">የትራንስፖርት ክፍያዎች እንደ ቦታው ሊጨመሩ ይችላሉ።</div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+        <div>
+          <h6>ተለዋዋጭ ፍጥነት፣ ቋሚ መርሃ ግብር የለም</h6>
+          <p>ለመጠበቅ ቋሚ ቡድን የለም። ከአስተማሪዎ ጋር በቀጥታ ክፍለ ጊዜዎችዎን ያዘጋጃሉ፣ እንደ እርስዎ እና እንደ አስተማሪ አቅርቦት በሚስማማ ፍጥነት።</p>
         </div>
       </div>
       <div class="fee-notice">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
         <div>
           <h6>የክፍያ ውሎች</h6>
-          <p>ተማሪዎች ምዝገባው ከመጠናቀቁ በፊት ቢያንስ ለ8 ሰዓታት (አንድ ወር) አስቀድመው ይከፍላሉ።</p>
+          <p>ተማሪዎች ምዝገባው ከመጠናቀቁ በፊት የወርሃዊ ፕሮግራም ክፍያ (8 ሰዓታት) አስቀድመው ይከፍላሉ።</p>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>የትኛው አማራጭ እንደሚስማማዎት እርግጠኛ አይደሉም?</h6>
+          <p>ቡድናችን ስለ ዋጋ፣ መርሃ ግብር እና አቅርቦት ለማብራራት ደስተኛ ነው — እባክዎ ያግኙን።</p>
         </div>
       </div>
     </div>
@@ -473,15 +459,15 @@
         <div class="detail-side-block">
           <h4>የመማሪያ ዘዴዎች</h4>
           <ul>
-            <li>የመስመር ላይ የቡድን ክፍሎች</li>
-            <li>የመስመር ላይ የግል (ቪአይፒ)</li>
-            <li>ከቤት ወደ ቤት የግል (ቪአይፒ)</li>
+            <li>የመስመር ላይ ክፍሎች</li>
+            <li>ከቤት ወደ ቤት ክፍሎች</li>
           </ul>
           <div class="methods-note">ከቤተሰብ ወይም ከጓደኞች ጋር መማር ይፈልጋሉ? የግል ትምህርት ይጠይቁ እና ለእርስዎ በሚስማማ መርሃ ግብር በቡድን ሆነው አብረው ይማሩ።</div>
         </div>
         <div class="detail-cta-row">
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRFP4_DPlgIYdW7Im9rH8StcokRG9dnCrF0ShHrsq0tqv5aA/viewform?usp=header" target="_blank" rel="noopener" class="program-enroll">አሁኑኑ ይመዝገቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a href="team-am.html#abenet" class="team-btn outline">ከአስተማሪዎቻችን ጋር ይተዋወቁ</a>
+          <a href="contact-am.html" class="team-btn outline">እኛን ያግኙ</a>
         </div>
       </div>
     </div>
@@ -499,68 +485,33 @@
       <div class="detail-status available">አሁን ይገኛል</div>
     </div>
 
-    <div class="cohort-panel reveal">
-      <div class="cohort-panel-head">
-        <div>
-          <span class="cohort-status-pill">ምዝገባዎች ክፍት ናቸው</span>
-          <h3 style="margin-top:12px;font-size:19px;color:var(--navy);">የአሁኑ የቡድን መርሃ ግብር</h3>
-        </div>
-        <div class="countdown-row" data-countdown="2026-10-17T00:00:00+03:00">
-          <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">ቀናት</div></div>
-          <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">ሰዓት</div></div>
-          <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">ደቂቃዎች</div></div>
-          <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">ሰከንዶች</div></div>
-        </div>
-      </div>
-      <div class="schedule-grid">
-        <div class="schedule-card">
-          <h5>የእርሳስ ስዕል → ሥዕል</h5>
-          <div class="sched-days">ቅዳሜ</div>
-          <div class="sched-time">ከቀኑ 10:00 – 11:00 ሰዓት</div>
-          <div class="sched-start">ከጥቅምት 7፣ 2018 ጀምሮ</div>
-        </div>
-        <div class="schedule-card">
-          <h5>የኦርቶዶክስ ቅዱሳት ሥዕላት</h5>
-          <div class="sched-days">እሁድ</div>
-          <div class="sched-time">ከቀኑ 10:00 – 11:00 ሰዓት</div>
-          <div class="sched-start">ከጥቅምት 8፣ 2018 ጀምሮ</div>
-        </div>
-      </div>
-      <div class="cohort-alt">📅 <strong>ተስማሚ የጊዜ ሰሌዳ አያዩም?</strong> አማራጭ የጊዜ ሰሌዳዎችን፣ የግል ትምህርቶችን ወይም የወደፊት የቡድን ቡድኖችን ለመወያየት እባክዎ <a href="contact-am.html" style="color:var(--navy);font-weight:700;text-decoration:underline;">እኛን ያግኙ</a>።</div>
-    </div>
-
     <div class="fee-panel reveal">
       <div class="fee-panel-head">
         <span class="fee-panel-eyebrow">የፕሮግራም ክፍያዎች</span>
-        <h3>የትምህርት እና የማመልከቻ ክፍያዎች</h3>
+        <h3>የትምህርት እና የምዝገባ ክፍያዎች</h3>
       </div>
       <div class="fee-grid">
         <div class="fee-card fee-card-app">
-          <div class="fee-card-label">የማመልከቻ ክፍያ</div>
+          <div class="fee-card-label">የምዝገባ ክፍያ</div>
           <div class="fee-card-amount">ETB 150</div>
           <div class="fee-card-note">ለሁሉም አመልካቾች ያስፈልጋል።</div>
         </div>
         <div class="fee-card">
-          <div class="fee-card-label">የመስመር ላይ የቡድን ክፍል</div>
-          <div class="fee-card-amount">ETB 275<span>/ ሰዓት</span></div>
-          <div class="fee-card-note">ተማሪዎች ለሚመዘገቡበት ሙሉ ኮርስ/ደረጃ ይከፍላሉ።</div>
+          <div class="fee-card-label">የእርሳስ ስዕል፣ የውሃ ቀለም እና አክሪሊክ — 20 ሰዓታት</div>
+          <div class="fee-card-amount">ETB 3,000<span>የመስመር ላይ</span></div>
+          <div class="fee-card-note">ከቤት ወደ ቤት፦ <strong>ETB 4,500</strong>። የሙሉ ኮርስ፣ በግምት የ3 ወር ትራክ።</div>
         </div>
         <div class="fee-card">
-          <div class="fee-card-label">የመስመር ላይ የግል (ቪአይፒ)</div>
-          <div class="fee-card-amount">ETB 475<span>/ ሰዓት</span></div>
-          <div class="fee-card-note">የአንድ ለአንድ መመሪያ።</div>
-        </div>
-        <div class="fee-card">
-          <div class="fee-card-label">ከቤት ወደ ቤት የግል (ቪአይፒ)</div>
-          <div class="fee-card-amount">ከ ETB 550<span>/ ሰዓት</span></div>
-          <div class="fee-card-note">የትራንስፖርት ክፍያዎች እንደ ቦታው ሊጨመሩ ይችላሉ።</div>
+          <div class="fee-card-label">የኦርቶዶክስ ቅዱሳት ሥዕላት</div>
+          <div class="fee-card-amount">ETB 3,500<span>የመስመር ላይ</span></div>
+          <div class="fee-card-note">ከቤት ወደ ቤት፦ <strong>ETB 5,500</strong>። የሙሉ ኮርስ፣ በግምት የ3 ወር ትራክ።</div>
         </div>
       </div>
       <div class="fee-notice">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
         <div>
-          <h6>ከቤት ወደ ቤት የግል</h6>
-          <p>ከቤት ወደ ቤት ለመማር፣ እባክዎን በቀጥታ ያግኙን። ቡድናችን ከማመልከትዎ በፊት ስለ ቦታዎ፣ የጊዜ ሰሌዳዎ፣ የአስተማሪዎች አቅርቦት እና የትምህርት ክፍያዎ ይወያያል።</p>
+          <h6>ተለዋዋጭ ፍጥነት፣ ቋሚ መርሃ ግብር የለም</h6>
+          <p>ለመጠበቅ ቋሚ ቡድን የለም። እያንዳንዱ ትራክ በግምት ለ3 ወር የተነደፈ ቢሆንም፣ ተማሪዎች ከአስተማሪያቸው ጋር በመነጋገር በፍጥነት ማለፍ ይችላሉ — እድገት እንደ አስተማሪ አቅርቦት ይወሰናል።</p>
         </div>
       </div>
       <div class="fee-notice">
@@ -568,6 +519,13 @@
         <div>
           <h6>የክፍያ ውሎች</h6>
           <p>ክፍያው በሁለት ክፍሎች ይከፈላል፡ ግማሹ ክፍያ የሚከፈለው በምዝገባ ወቅት ሲሆን የቀረው ግማሽ ደግሞ ከዚያ በኋላ ይከፈላል።</p>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>የትኛው አማራጭ እንደሚስማማዎት እርግጠኛ አይደሉም?</h6>
+          <p>ቡድናችን ስለ ዋጋ፣ መርሃ ግብር እና አቅርቦት ለማብራራት ደስተኛ ነው — እባክዎ ያግኙን።</p>
         </div>
       </div>
     </div>
@@ -615,14 +573,14 @@
         <div class="detail-side-block">
           <h4>የመማሪያ ዘዴዎች</h4>
           <ul>
-            <li>የመስመር ላይ የቡድን ክፍሎች</li>
-            <li>የመስመር ላይ የግል (ቪአይፒ)</li>
-            <li>ከቤት ወደ ቤት የግል (ቪአይፒ)</li>
+            <li>የመስመር ላይ ክፍሎች</li>
+            <li>ከቤት ወደ ቤት ክፍሎች</li>
           </ul>
           <div class="methods-note">ከቤተሰብ ወይም ከጓደኞች ጋር መማር ይፈልጋሉ? የግል ትምህርት ይጠይቁ እና ለእርስዎ በሚስማማ መርሃ ግብር በቡድን ሆነው አብረው ይማሩ።</div>
         </div>
         <div class="detail-cta-row">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIUja7wN_ltDRV4Dzg1EidljwXqeddtttoI6TyYpLEKf4EqA/viewform?usp=header" class="program-enroll">አሁኑኑ ይመዝገቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIUja7wN_ltDRV4Dzg1EidljwXqeddtttoI6TyYpLEKf4EqA/viewform?usp=header" target="_blank" rel="noopener" class="program-enroll">አሁኑኑ ይመዝገቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="contact-am.html" class="team-btn outline">እኛን ያግኙ</a>
         </div>
       </div>
     </div>
@@ -640,74 +598,38 @@
       <div class="detail-status available">አሁን ይገኛል</div>
     </div>
 
-    <div class="cohort-panel reveal">
-      <div class="cohort-panel-head">
-        <div>
-          <span class="cohort-status-pill">ምዝገባዎች ክፍት ናቸው</span>
-          <h3 style="margin-top:12px;font-size:19px;color:var(--navy);">የአሁኑ የቡድን መርሃ ግብር</h3>
-        </div>
-        <div class="countdown-row" data-countdown="2026-10-12T00:00:00+03:00">
-          <div class="countdown-unit"><div class="num cd-days">00</div><div class="lbl">ቀናት</div></div>
-          <div class="countdown-unit"><div class="num cd-hours">00</div><div class="lbl">ሰዓት</div></div>
-          <div class="countdown-unit"><div class="num cd-mins">00</div><div class="lbl">ደቂቃዎች</div></div>
-          <div class="countdown-unit"><div class="num cd-secs">00</div><div class="lbl">ሰከንዶች</div></div>
-        </div>
-      </div>
-      <div class="schedule-grid">
-        <div class="schedule-card">
-          <h5>የቤተክርስቲያን ዶግማ</h5>
-          <div class="sched-days">ሰኞ</div>
-          <div class="sched-time">ማታ 1:30 – 2:30 ሰዓት</div>
-          <div class="sched-start">ከጥቅምት 2፣ 2018 ጀምሮ</div>
-        </div>
-        <div class="schedule-card">
-          <h5>የቤተክርስቲያን ታሪክ</h5>
-          <div class="sched-days">ማክሰኞ</div>
-          <div class="sched-time">ማታ 1:30 – 2:30 ሰዓት</div>
-          <div class="sched-start">ከጥቅምት 3፣ 2018 ጀምሮ</div>
-        </div>
-        <div class="schedule-card">
-          <h5>የመጽሐፍ ቅዱስ ጥናት</h5>
-          <div class="sched-days">ረቡዕ</div>
-          <div class="sched-time">ማታ 1:30 – 2:30 ሰዓት</div>
-          <div class="sched-start">ከጥቅምት 4፣ 2018 ጀምሮ</div>
-        </div>
-      </div>
-      <div class="cohort-alt">📅 <strong>ተስማሚ የጊዜ ሰሌዳ አያዩም?</strong> አማራጭ የጊዜ ሰሌዳዎችን፣ የግል ትምህርቶችን ወይም የወደፊት የቡድን ቡድኖችን ለመወያየት እባክዎ <a href="contact-am.html" style="color:var(--navy);font-weight:700;text-decoration:underline;">እኛን ያግኙ</a>።</div>
-    </div>
-
     <div class="fee-panel reveal">
       <div class="fee-panel-head">
         <span class="fee-panel-eyebrow">የፕሮግራም ክፍያዎች</span>
-        <h3>የትምህርት እና የማመልከቻ ክፍያዎች</h3>
+        <h3>የትምህርት እና የምዝገባ ክፍያዎች</h3>
       </div>
       <div class="fee-grid">
         <div class="fee-card fee-card-app">
-          <div class="fee-card-label">የማመልከቻ ክፍያ</div>
-          <div class="fee-card-amount">ETB 80</div>
+          <div class="fee-card-label">የምዝገባ ክፍያ</div>
+          <div class="fee-card-amount">ETB 150</div>
           <div class="fee-card-note">ለሁሉም አመልካቾች ያስፈልጋል።</div>
         </div>
         <div class="fee-card">
-          <div class="fee-card-label">የመስመር ላይ የቡድን ክፍል</div>
-          <div class="fee-card-amount">ETB 149<span>/ ሰዓት</span></div>
-          <div class="fee-card-note">ተማሪዎች ለሚመዘገቡበት ሙሉ ኮርስ/ደረጃ ይከፍላሉ።</div>
+          <div class="fee-card-label">የመጽሐፍ ቅዱስ ጥናት — 10 ሰዓታት</div>
+          <div class="fee-card-amount">ETB 1,500<span>የመስመር ላይ</span></div>
+          <div class="fee-card-note">ከቤት ወደ ቤት፦ <strong>ETB 3,000</strong>። የሙሉ ኮርስ ዋጋ።</div>
         </div>
         <div class="fee-card">
-          <div class="fee-card-label">የመስመር ላይ የግል (ቪአይፒ)</div>
-          <div class="fee-card-amount">ETB 349<span>/ ሰዓት</span></div>
-          <div class="fee-card-note">የአንድ ለአንድ መመሪያ።</div>
+          <div class="fee-card-label">የቤተክርስቲያን ዶግማ — 10 ሰዓታት</div>
+          <div class="fee-card-amount">ETB 1,500<span>የመስመር ላይ</span></div>
+          <div class="fee-card-note">ከቤት ወደ ቤት፦ <strong>ETB 3,000</strong>። የሙሉ ኮርስ ዋጋ።</div>
         </div>
         <div class="fee-card">
-          <div class="fee-card-label">ከቤት ወደ ቤት የግል (ቪአይፒ)</div>
-          <div class="fee-card-amount">ከ ETB 449<span>/ ሰዓት</span></div>
-          <div class="fee-card-note">የትራንስፖርት ክፍያዎች እንደ ቦታው ሊጨመሩ ይችላሉ።</div>
+          <div class="fee-card-label">የቤተክርስቲያን ታሪክ — 15 ሰዓታት</div>
+          <div class="fee-card-amount">ETB 2,250<span>የመስመር ላይ</span></div>
+          <div class="fee-card-note">ከቤት ወደ ቤት፦ <strong>ETB 4,500</strong>። የሙሉ ኮርስ ዋጋ።</div>
         </div>
       </div>
       <div class="fee-notice">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
         <div>
-          <h6>ከቤት ወደ ቤት የግል</h6>
-          <p>ከቤት ወደ ቤት ለመማር፣ እባክዎን በቀጥታ ያግኙን። ቡድናችን ከማመልከትዎ በፊት ስለ ቦታዎ፣ የጊዜ ሰሌዳዎ፣ የአስተማሪዎች አቅርቦት እና የትምህርት ክፍያዎ ይወያያል።</p>
+          <h6>ተለዋዋጭ ፍጥነት፣ ቋሚ መርሃ ግብር የለም</h6>
+          <p>ለመጠበቅ ቋሚ ቡድን የለም። ከአስተማሪዎ ጋር በቀጥታ ክፍለ ጊዜዎችዎን ያዘጋጃሉ፣ ለእርስዎ በሚስማማ ፍጥነት።</p>
         </div>
       </div>
       <div class="fee-notice">
@@ -715,6 +637,13 @@
         <div>
           <h6>የክፍያ ውሎች</h6>
           <p>ክፍያው በሁለት ክፍሎች ይከፈላል፡ ግማሹ ክፍያ የሚከፈለው በምዝገባ ወቅት ሲሆን የቀረው ግማሽ ደግሞ ከዚያ በኋላ ይከፈላል።</p>
+        </div>
+      </div>
+      <div class="fee-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <h6>ከቤት ወደ ቤት ይገኛል</h6>
+          <p>ለነገረ ሃይማኖት ፊት ለፊት፣ ከቤት ወደ ቤት ክፍለ ጊዜዎችን ይፈልጋሉ? እነዚያ ከላይ በተገለጸው ዋጋ ይገኛሉ።</p>
         </div>
       </div>
     </div>
@@ -764,14 +693,14 @@
         <div class="detail-side-block">
           <h4>የመማሪያ ዘዴዎች</h4>
           <ul>
-            <li>የመስመር ላይ የቡድን ክፍሎች</li>
-            <li>የመስመር ላይ የግል (ቪአይፒ)</li>
-            <li>ከቤት ወደ ቤት የግል (ቪአይፒ)</li>
+            <li>የመስመር ላይ ክፍሎች</li>
+            <li>ከቤት ወደ ቤት ክፍሎች</li>
           </ul>
           <div class="methods-note">ከቤተሰብ ወይም ከጓደኞች ጋር መማር ይፈልጋሉ? የግል ትምህርት ይጠይቁ እና ለእርስዎ በሚስማማ መርሃ ግብር በቡድን ሆነው አብረው ይማሩ።</div>
         </div>
         <div class="detail-cta-row">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBNpbRaY9fX00hgYZk7DkMtQ9AC6h6UWms7dGEXktHxxmKOw/viewform?usp=header" class="program-enroll">አሁኑኑ ይመዝገቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBNpbRaY9fX00hgYZk7DkMtQ9AC6h6UWms7dGEXktHxxmKOw/viewform?usp=header" target="_blank" rel="noopener" class="program-enroll">አሁኑኑ ይመዝገቡ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="contact-am.html" class="team-btn outline">እኛን ያግኙ</a>
         </div>
       </div>
     </div>
@@ -783,7 +712,7 @@
   <div class="wrap">
     <div class="cta-band">
       <h2>የመማሪያ ጉዞዎን ለመጀመር ዝግጁ ነዎት?</h2>
-      <p>የበለጠ ሁሉን አቀፍ የወደፊት ሕይወትን ለማሳካት በሚሰሩ የተማሪዎች፣ የበጎ ፈቃደኞች፣ የአስተማሪዎች እና የአጋሮቻችን ማህበረሰብ ውስጥ ይቀላቀሉ።</p>
+      <p>የበለጠ ሁሉን አቀፍ የወደፊት ሕይወትን ለማሳካት በሚሰሩ የተማሪዎች፣ የበጎ ፈቃደኞች፣ የአስተማሪዎች እና የአጋሮቻችን ማህበረሰብ ውስጥ ይቀላቀሉ። ስለ ዋጋ ወይም መርሃ ግብር ጥያቄ አለዎት? ቡድናችን አንድ መልዕክት ብቻ ይርቀዎታል።</p>
       <div class="cta-actions">
         <a href="programs-am.html#pnavCards" class="btn btn-primary">አሁኑኑ ይመዝገቡ</a>
         <a href="contact-am.html" class="btn btn-primary">እኛን ያግኙ</a>
@@ -882,26 +811,6 @@
     });
   }, { threshold: 0.4, rootMargin: '-120px 0px -40% 0px' });
   detailSections.forEach(sec => spyIO.observe(sec));
-
-  // Live countdown timers (dynamic, same as English version)
-  function initCountdown(el){
-    const target = new Date(el.dataset.countdown).getTime();
-    const dEl = el.querySelector('.cd-days'), hEl = el.querySelector('.cd-hours'), mEl = el.querySelector('.cd-mins'), sEl = el.querySelector('.cd-secs');
-    function tick(){
-      let diff = Math.max(0, target - Date.now());
-      const days = Math.floor(diff / 86400000); diff -= days * 86400000;
-      const hours = Math.floor(diff / 3600000); diff -= hours * 3600000;
-      const mins = Math.floor(diff / 60000); diff -= mins * 60000;
-      const secs = Math.floor(diff / 1000);
-      if(dEl) dEl.textContent = String(days).padStart(2,'0');
-      if(hEl) hEl.textContent = String(hours).padStart(2,'0');
-      if(mEl) mEl.textContent = String(mins).padStart(2,'0');
-      if(sEl) sEl.textContent = String(secs).padStart(2,'0');
-    }
-    tick();
-    setInterval(tick, 1000);
-  }
-  document.querySelectorAll('[data-countdown]').forEach(initCountdown);
 </script>
 
 </body>
